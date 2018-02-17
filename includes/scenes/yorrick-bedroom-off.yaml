@@ -1,0 +1,4 @@
+name: YBR Off
+entities:
+  light.hue_white_lamp_3:
+    state: off

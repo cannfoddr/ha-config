@@ -1,0 +1,5 @@
+- name: Telefonica O2 Bath Road
+  latitude: 51.519341675152
+  longitude: -0.63022350257497
+  radius: 100
+  icon: mdi:worker

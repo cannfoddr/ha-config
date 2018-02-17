@@ -1,0 +1,21 @@
+alias: Scene Yorrick bedroom
+trigger:
+  platform: state
+  entity_id: input_select.scene_ybr
+action:
+  - service: scene.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state( "input_select.scene_mbr", "Nightlight" ) %}
+          scene.ybr_nightlight
+        {%-elif is_state( "input_select.scene_mbr", "Dimmed" ) %}
+          scene.ybr_dimmed
+        {%-elif is_state( "input_select.scene_mbr", "Bright" ) %}
+          scene.ybr_bright
+        {%-elif is_state( "input_select.scene_mbr", "Off" ) %}
+          scene.ybr_off
+        {% endif %}
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.scene_ybr
+      option: "-"

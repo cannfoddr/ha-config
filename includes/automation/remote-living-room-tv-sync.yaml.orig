@@ -1,0 +1,10 @@
+alias: 'Sync Living Room Remote'
+trigger:
+  platform: state
+  entity_id: remote.living_room_tv
+action:
+  service: input_select.select_option
+  data_template:
+    entity_id: input_select.living_room_tv
+    option: >
+      {{ states.remote.living_room_tv.attributes.current_activity }}

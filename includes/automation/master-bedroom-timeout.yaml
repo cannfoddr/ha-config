@@ -1,0 +1,8 @@
+alias: Turn off master bedroom room lights after timer
+trigger:
+  platform: state
+  entity_id: light.hue_white_lamp_1
+  state: 'on'
+action:
+  service: homeassistant.turn_on
+  entity_id: script.master_bedroom_lights_set_timeout

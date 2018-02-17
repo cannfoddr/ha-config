@@ -1,0 +1,13 @@
+platform: synologydsm
+host: 192.168.1.198
+port: 5000
+username: automation
+password: KbEkE9Y6zjqfCsg8EoUbt7dybhEMPenPDKasb6WGJYWRbbjC4KMW2mBArf3iQFuZ
+monitored_conditions:
+  - volume_percentage_used
+  - volume_status
+  - disk_smart_status
+  - disk_status
+  - cpu_total_load
+  - memory_real_usage
+  - network_up

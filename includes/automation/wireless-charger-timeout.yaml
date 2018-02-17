@@ -1,0 +1,8 @@
+alias: Turn off wireless charger after delay
+trigger:
+  platform: state
+  entity_id: switch.wenzhou_tkb_control_system_unknown_type0004_id0002_switch_3_0
+  to: 'on'
+action:
+  service: homeassistant.turn_on
+  entity_id: script.wireless_charger_set_timeout

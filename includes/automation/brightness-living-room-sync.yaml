@@ -1,0 +1,19 @@
+alias: Brightness Living Room Sync
+trigger:
+  - platform: state
+    entity_id: light.hue_color_spot_5
+    to: "on"
+  - platform: state
+    entity_id: light.hue_color_spot_6
+    to: "on"
+  - platform: state
+    entity_id: light.hue_color_spot_3
+    to: "on"
+  - platform: state
+    entity_id: light.hue_color_spot_4
+    to: "on"
+action:
+  service: input_number.set_value
+  data_template:
+    entity_id: input_number.brightness_lr
+    value: '{{ trigger.to_state.attributes.brightness|float }}'

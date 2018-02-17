@@ -1,0 +1,154 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret lat
+  longitude: !secret long
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 47
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/London
+  customize: !include_dir_merge_named includes/customizations
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+  javascript_version: latest
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # api_password: !secret api_pass
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+recorder:
+  purge_interval: 2
+  purge_keep_days: 30
+  db_url: mysql://HAuser:HApassword@192.168.1.190/homeassistant
+
+# Emulated Hue Bridge
+emulated_hue:
+  host_ip: 192.168.1.190
+  listen_port: 8300
+  off_maps_to_on_domains:
+    - script
+    - scene
+  expose_by_default: true
+  exposed_domains:
+    - switch
+
+light:
+  - platform: hue
+    host: 192.168.1.47
+    allow_hue_groups: true 
+    allow_in_emulated_hue: false
+
+# Z-Wave
+zwave:
+  usb_path: /dev/ttyACM0
+  network_key: !secret z_wave_network_key
+
+# Track the sun
+sun:
+
+media_player: !include includes/media-players.yaml
+
+device_tracker:
+  - platform: unifi
+    host: docker.merwood.com
+    port: 8643
+    username: !secret unifi_user
+    password: !secret unifi_pass
+    verify_ssl: false
+  - platform: owntracks
+    max_gps_acccuracy: 200
+    waypoints: True
+    waypoint_whitelist:
+    - adrian
+
+mqtt:
+    broker: 192.168.1.190
+    port: 1883
+    client_id: home-assistant-1
+    keepalive: 60
+    username: !secret mqtt_user
+    password: !secret mqtt_pass
+    
+camera: !include includes/camera.yaml
+
+weblink: !include includes/weblinks.yaml
+
+zone: !include zones.yaml
+
+group: !include_dir_merge_named includes/group
+
+switch: !include includes/switch.yaml
+
+notify: !include includes/notify.yaml
+
+# Automation
+scene: !include_dir_list includes/scenes
+
+script: !include includes/scripts.yaml
+
+automation: !include automations.yaml
+
+# Controls
+input_select: !include includes/input-selects.yaml
+
+input_number: !include includes/input-numbers.yaml
+
+input_boolean: !include includes/input-booleans.yaml
+
+# Sensors
+sensor: !include_dir_list includes/sensors
+
+tado:
+  username: adrian@adrian-merwood.net
+  password: auto-heeting-wurks-wondefully
+
+remote:
+  - platform: harmony
+    name: Living Room TV
+    username: !secret harmony_email # The email address associated with your Harmony hub account
+    password: !secret harmony_pass # Your password
+    host: 192.168.1.108 #replace with the IP of your Hub.  This can be found in the Harmony app under About, Versions.
+    port: 5222 # Default is 5222
+    activity: WATCH TV # Optional, This is the name of the activity that will launch if you just power on the remote using the default device created in HASS.
+
+config:
+
+
+ios:
+
+arlo:
+  username: adrian@adrian-merwood.net
+  password: !secret arlo_pass
+
+alarm_control_panel:
+  - platform: arlo
+
+
+ffmpeg:
+
+shell_command: !include_dir_merge_named includes/shell_commands/
+panel_iframe: !include_dir_merge_named includes/panel_iframe/
+
+cloud:

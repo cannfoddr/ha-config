@@ -1,0 +1,8 @@
+name: MBR Off
+entities:
+  light.master_bedroom_main_light:
+    state: off
+  light.veroniques_bedside_light:
+    state: off
+  light.adrians_bedside_light:
+    state: off

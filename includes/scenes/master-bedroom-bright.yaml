@@ -1,0 +1,11 @@
+name: MBR Bright
+entities:
+  light.master_bedroom_main_light:
+    state: on
+    brightness: 255
+  light.veroniques_bedside_light:
+    state: on
+    brightness: 255
+  light.adrians_bedside_light:
+    state: on
+    brightness: 255

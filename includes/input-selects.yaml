@@ -1,0 +1,57 @@
+scene_lr:
+  name: Scene
+  icon: mdi:brightness-auto
+  initial: "-"
+  options:
+    - "-"
+    - "Off"
+    - Nightlight
+    - Dimmed
+    - Relax
+    - Read
+    - Knitting
+scene_mbr:
+  name: Scene
+  icon: mdi:brightness-auto
+  initial: "-"
+  options:
+    - "-"
+    - "Off"
+    - Nightlight
+    - Dimmed
+    - Relax
+    - Bright
+scene_bbr:
+  name: Scene
+  icon: mdi:brightness-auto
+  initial: "-"
+  options:
+    - "-"
+    - "Off"
+    - Nightlight
+    - Dimmed
+    - Relax
+    - Bright
+scene_ybr:
+  name: Scene
+  icon: mdi:brightness-auto
+  initial: "-"
+  options:
+    - "-"
+    - "Off"
+    - Nightlight
+    - Dimmed
+    - Relax
+    - Bright
+living_room_tv:
+  name: Living Room TV
+  options:
+    - PowerOff
+    - Watch Netflix
+    - Plex
+    - Watch TV
+    - Watch Apple TV
+    - Play PS4
+    - WATCH DVD BLURAY
+  initial: PowerOff
+  icon: mdi:monitor

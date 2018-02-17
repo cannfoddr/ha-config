@@ -1,0 +1,11 @@
+alias: Brightness Yorrick Bedroom
+trigger:
+  platform: state
+  entity_id: input_number.brightness_ybr
+action:
+  service: light.turn_on
+  data:
+    entity_id:
+      - light.hue_white_lamp_3
+  data_template:
+    brightness: '{{ states( "input_number.brightness_ybr" )|round( 0 ) }}'

@@ -1,0 +1,23 @@
+alias: 'Living room motion'
+trigger:
+  platform: state
+  entity_id: sensor.fibaro_system_fgms001_motion_sensor_burglar_4_10
+  state: '8'
+condition:
+  condition: or
+  conditions:
+    - condition: state
+      entity_id: 'light.hue_color_spot_5'
+      state: 'off'
+    - condition: state
+      entity_id: 'light.hue_color_spot_6'
+      state: 'off'
+    - condition: state
+      entity_id: 'light.hue_color_spot_3'
+      state: 'off'
+    - condition: state
+      entity_id: 'light.hue_color_spot_4'
+      state: 'off'
+action:
+  service: scene.turn_on
+  entity_id: scene.lr_dimmed

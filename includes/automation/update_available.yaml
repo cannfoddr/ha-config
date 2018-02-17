@@ -1,0 +1,16 @@
+############################################################
+#
+# Notify Graeme when Home Assistant Update is available
+#
+############################################################
+alias: NOTIFY Adrian when UPDATE is available
+trigger:
+  platform: state
+  entity_id: updater.updater
+condition:
+  condition: template
+  value_template: "{{ states('updater.updater') != 'unknown' }}"
+action:
+  service: notify.notify_adrian
+  data_template:
+    message: "Home Assistant {{ states('updater.updater') }} is now available."

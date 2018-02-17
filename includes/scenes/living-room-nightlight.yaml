@@ -1,0 +1,8 @@
+name: LR Nightlight
+entities:
+  light.living_room_sofa:
+    state: on
+    brightness: 1
+    color_temp: 450
+  light.living_room_door:
+    state: off

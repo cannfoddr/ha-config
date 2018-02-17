@@ -1,0 +1,8 @@
+alias: Xmas Lights on around sunset
+trigger:
+    platform: sun
+    event: sunset
+    offset: "00:30:00"
+action:
+  service: homeassistant.turn_on
+  entity_id: switch.aeotec_zw075_smart_switch_gen5_switch_2_0

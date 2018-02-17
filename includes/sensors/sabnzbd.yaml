@@ -1,0 +1,17 @@
+############################################################
+#
+# Home Assistant SABNZBD monitoring
+#
+############################################################
+platform: sabnzbd
+host: sabnzbd.merwood.com
+api_key: !secret sabnzbd_api
+port: 443
+ssl: True
+monitored_variables:
+  - 'current_status'
+  - 'speed'
+  - 'queue_size'
+  - 'queue_remaining'
+  - 'disk_size'
+  - 'disk_free'

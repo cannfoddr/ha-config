@@ -1,0 +1,90 @@
+############################################################
+#
+# Home Assistant Servers View
+#
+############################################################
+
+servers:
+  name: Servers
+  view: yes
+  entities:
+    - group.synology
+    - group.microserver
+    - group.sabnzbd
+    - group.media
+    - group.hosts
+  icon: mdi:server
+
+Synology:
+  - weblink.synology
+  - sensor.cpu_load_total
+  - sensor.memory_usage_real
+  - sensor.status_volume_1
+  - sensor.volume_used_volume_1
+  - sensor.status_volume_2
+  - sensor.volume_used_volume_2
+  - sensor.status_sda
+  - sensor.status_smart_sda
+  - sensor.status_sdb
+  - sensor.status_smart_sdb
+  - sensor.status_sdc
+  - sensor.status_smart_sdc
+  - sensor.status_sdd
+  - sensor.status_smart_sdd
+  - sensor.status_sde
+  - sensor.status_smart_sde
+  - sensor.status_sdga
+  - sensor.status_smart_sdga
+  - sensor.status_sdgb
+  - sensor.status_smart_sdgb
+  - sensor.status_sdgc
+  - sensor.status_smart_sdgc
+  - sensor.status_sdgd
+  - sensor.status_smart_sdgd
+  - sensor.status_sdge
+  - sensor.status_smart_sdge
+
+MicroServer:
+  - weblink.hp_ilo
+  - sensor.microserver_cpu_load
+  - sensor.microserver_disk_use
+  - sensor.microserver_ram_use
+  - sensor.microserver_running
+  - sensor.microserver_sleeping
+  - sensor.microserver_swap_use
+  - sensor.microserver_temperature_state
+  - sensor.microserver_ambient
+  - sensor.microserver_chipset
+  - sensor.microserver_exhaust
+  - sensor.microserver_memory
+  - sensor.microserver_processor
+  - sensor.microserver_bios_state
+  - sensor.microserver_fans_state
+  - sensor.microserver_fan_speed
+  - sensor.microserver_memory_state
+  - sensor.microserver_network_state
+  - sensor.microserver_power_state
+  - sensor.microserver_processor_state
+  - sensor.microserver_storage_state
+
+SabNZBD:
+  - weblink.sabnzbd
+  - sensor.sabnzbd_status
+  - sensor.sabnzbd_disk
+  - sensor.sabnzbd_disk_free
+  - sensor.sabnzbd_left
+  - sensor.sabnzbd_queue
+  - sensor.sabnzbd_speed
+
+Media:
+  - weblink.sonarr
+  - weblink.radarr
+
+Hosts:
+  - switch.diamondhead
+  - switch.adrianpc
+  - switch.ethanspc
+  - switch.boostboxv3
+  - switch.harmonyhub
+  - switch.esxi
+  - switch.n300ip

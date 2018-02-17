@@ -1,0 +1,7 @@
+alias: Xmas Lights off after 10pm
+trigger:
+    platform: time
+    after: '22:00:00'
+action:
+  service: homeassistant.turn_off
+  entity_id: switch.aeotec_zw075_smart_switch_gen5_switch_2_0

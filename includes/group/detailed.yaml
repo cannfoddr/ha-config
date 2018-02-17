@@ -1,0 +1,25 @@
+############################################################
+#
+# Home Assistant Detailed View
+#
+############################################################
+
+detailed:
+   view: yes
+   entities:
+    - group.devices
+    - group.phones
+
+Devices:
+  - device_tracker.veroniquepc
+  - device_tracker.adriansbpretina
+  - device_tracker.adrianmsnewipad
+  - device_tracker.bart
+Phones:
+  - device_tracker.androiddedc6333955a3b59
+  - device_tracker.androidaaca17d2b2a4e4fe
+  - device_tracker.android68334eefbd63178a
+  - device_tracker.androidd004223fe289f40b
+  - device_tracker.androidd3ea78c81c73a033
+  - device_tracker.android611956693bf6385
+

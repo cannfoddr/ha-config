@@ -1,0 +1,14 @@
+############################################################
+#
+# Home Assistant SONARR monitoring
+#
+############################################################
+platform: sonarr
+host: sonarr.merwood.com
+api_key: !secret sonarr_api
+port: 443
+ssl: true
+monitored_variables:
+  - 'upcoming'
+  - 'queue'
+days: 2

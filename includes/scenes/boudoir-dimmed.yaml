@@ -1,0 +1,5 @@
+name: BBR Dimmed
+entities:
+  light.hue_white_lamp_2:
+    state: on
+    brightness: 77

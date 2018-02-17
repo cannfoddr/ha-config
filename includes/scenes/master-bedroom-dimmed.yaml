@@ -1,0 +1,11 @@
+name: MBR Dimmed
+entities:
+  light.master_bedroom_main_light:
+    state: off
+    brightness: 77
+  light.veroniques_bedside_light:
+    state: on
+    brightness: 77
+  light.adrians_bedside_light:
+    state: on
+    brightness: 77

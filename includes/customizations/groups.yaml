@@ -1,0 +1,3 @@
+group.all_automations:
+  friendly_name: "Automations"
+  hidden: false

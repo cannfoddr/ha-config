@@ -1,0 +1,12 @@
+system_view: 
+    view: yes
+    name: System
+    entities: 
+      - group.all_automations
+      - group.master_controls
+
+Master Controls:
+    entities:
+      - input_boolean.door_notifications
+      - input_boolean.motion_notifications
+      - input_boolean.alarm_set

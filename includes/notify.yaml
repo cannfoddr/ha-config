@@ -1,0 +1,34 @@
+- platform: smtp
+  name: am_email
+  server: !secret smtp_server
+  port: !secret smtp_port
+  username: !secret smtp_sender
+  password: !secret smtp_password
+  starttls: true
+  sender: !secret smtp_sender
+  recipient: !secret am_email
+
+- platform: pushover
+  name: po
+  api_key: !secret po_api
+  user_key: !secret po_user
+
+- platform: pushbullet
+  name: pb
+  api_key: !secret pb_api
+
+- platform: gntp
+  name: growl
+  hostname: !secret gntp_host
+  password: !secret gntp_password
+
+- platform: nfandroidtv
+  name: living_room_tv
+  host: 192.168.1.213
+
+- platform: group
+  name: notify_adrian 
+  services:
+    - service: am_email
+    - service: growl
+    - service: living_room_tv

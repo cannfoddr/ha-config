@@ -1,0 +1,65 @@
+platform: hp_ilo
+name: Microserver
+host: msgen8.merwood.com
+port: 443
+username: adrian
+password: 6Goodhealing
+monitored_variables:
+  - name: Name
+    sensor_type: server_name
+  - name: Hostname
+    sensor_type: server_fqdn
+  - name: Power
+    sensor_type: server_power_status
+  - name: Asset tag
+    sensor_type: server_asset_tag
+  - name: UID light
+    sensor_type: server_uid_status
+  - name: Ambient
+    sensor_type: server_health
+    unit_of_measurement: '°C'
+    value_template: '{{ ilo_data.temperature["01-Inlet Ambient"]["currentreading"][0] }}'
+  - name: Processor
+    sensor_type: server_health
+    unit_of_measurement: '°C'
+    value_template: '{{ ilo_data.temperature["02-CPU"]["currentreading"][0] }}'
+  - name: Memory
+    sensor_type: server_health
+    unit_of_measurement: '°C'
+    value_template: '{{ ilo_data.temperature["03-P1 DIMM 1-2"]["currentreading"][0] }}'
+  - name: Chipset
+    sensor_type: server_health
+    unit_of_measurement: '°C'
+    value_template: '{{ ilo_data.temperature["05-Chipset"]["currentreading"][0] }}'
+  - name: Exhaust
+    sensor_type: server_health
+    unit_of_measurement: '°C'
+    value_template: '{{ ilo_data.temperature["12-Sys Exhaust"]["currentreading"][0] }}'
+  - name: Fan speed
+    sensor_type: server_health
+    unit_of_measurement: '%'
+    value_template: '{{ ilo_data.fans["Fan 1"]["speed"][0] }}'
+  - name: Network state
+    sensor_type: server_health
+    value_template: '{{ ilo_data.health_at_a_glance["network"]["status"] }}'
+  - name: Bios state
+    sensor_type: server_health
+    value_template: '{{ ilo_data.health_at_a_glance["bios_hardware"]["status"] }}'
+  - name: Fans state
+    sensor_type: server_health
+    value_template: '{{ ilo_data.health_at_a_glance["fans"]["status"] }}'
+  - name: Memory state
+    sensor_type: server_health
+    value_template: '{{ ilo_data.health_at_a_glance["memory"]["status"] }}'
+  - name: Storage state
+    sensor_type: server_health
+    value_template: '{{ ilo_data.health_at_a_glance["storage"]["status"] }}'
+  - name: Temperature state
+    sensor_type: server_health
+    value_template: '{{ ilo_data.health_at_a_glance["temperature"]["status"] }}'
+  - name: Processor state
+    sensor_type: server_health
+    value_template: '{{ ilo_data.health_at_a_glance["processor"]["status"] }}'
+  - name: Power state
+    sensor_type: server_health
+    value_template: '{{ ilo_data.health_at_a_glance["power_supplies"]["status"] }}'

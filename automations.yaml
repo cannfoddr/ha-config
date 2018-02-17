@@ -1,0 +1,362 @@
+- id: brightness_boudoir_set
+  alias: Brightness Boudoir
+  trigger:
+  - platform: state
+    entity_id: input_number.brightness_bbr
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.hue_white_lamp_2
+    data_template:
+      brightness: '{{ states( "input_number.brightness_bbr" )|round( 0 ) }}'
+- id: brighness_boudoir_sync
+  alias: Brightness Boudoir Sync
+  trigger:
+  - platform: state
+    entity_id: light.hue_white_lamp_2
+    to: 'on'
+  action:
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.brightness_bbr
+      value: '{{ trigger.to_state.attributes.brightness|float }}'
+- id: brightness_living_room_set
+  alias: Brightness Living Room
+  trigger:
+  - platform: state
+    entity_id: input_number.brightness_lr
+  action:
+  - service: light.turn_on
+    data:
+      entity_id:
+      - light.hue_color_spot_5
+      - light.hue_color_spot_6
+      - light.hue_color_spot_3
+      - light.hue_color_spot_4
+    data_template:
+      brightness: '{{ states( "input_number.brightness_lr" )|round( 0 ) }}'
+- id: brightness_living_room_sync
+  alias: Brightness Living Room Sync
+  trigger:
+  - platform: state
+    entity_id: light.hue_color_spot_5
+    to: 'on'
+  - platform: state
+    entity_id: light.hue_color_spot_6
+    to: 'on'
+  - platform: state
+    entity_id: light.hue_color_spot_3
+    to: 'on'
+  - platform: state
+    entity_id: light.hue_color_spot_4
+    to: 'on'
+  action:
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.brightness_lr
+      value: '{{ trigger.to_state.attributes.brightness|float }}'
+- id: brightness_master_bedroom_set
+  alias: Brightness Master Bedroom
+  trigger:
+  - platform: state
+    entity_id: input_number.brightness_mbr
+  action:
+  - service: light.turn_on
+    data:
+      entity_id:
+      - light.hue_white_lamp_1
+    data_template:
+      brightness: '{{ states( "input_number.brightness_mbr" )|round( 0 ) }}'
+- id: brightness_master_bedroom_sync
+  alias: Brightness Master Bedroom Sync
+  trigger:
+  - platform: state
+    entity_id: light.hue_white_lamp_1
+    to: 'on'
+  action:
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.brightness_mbr
+      value: '{{ trigger.to_state.attributes.brightness|float }}'
+- id: brightness_yorrick_bedroom_set
+  alias: Brightness Yorrick Bedroom
+  trigger:
+  - platform: state
+    entity_id: input_number.brightness_ybr
+  action:
+  - service: light.turn_on
+    data:
+      entity_id:
+      - light.hue_white_lamp_3
+    data_template:
+      brightness: '{{ states( "input_number.brightness_ybr" )|round( 0 ) }}'
+- id: brightness_yorrick_bedroom_sync
+  alias: Brightness Yorrick Bedroom Sync
+  trigger:
+  - platform: state
+    entity_id: light.hue_white_lamp_3
+    to: 'on'
+  action:
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.brightness_ybr
+      value: '{{ trigger.to_state.attributes.brightness|float }}'
+- id: scene_boudoir
+  alias: Scene Boudoir
+  trigger:
+  - platform: state
+    entity_id: input_select.scene_bbr
+  action:
+  - service: scene.turn_on
+    data_template:
+      entity_id: "{% if is_state( \"input_select.scene_mbr\", \"Nightlight\" ) %}\n\
+        \  scene.bbr_nightlight\n{%-elif is_state( \"input_select.scene_mbr\", \"\
+        Dimmed\" ) %}\n  scene.bbr_dimmed\n{%-elif is_state( \"input_select.scene_mbr\"\
+        , \"Bright\" ) %}\n  scene.bbr_bright\n{%-elif is_state( \"input_select.scene_mbr\"\
+        , \"Off\" ) %}\n  scene.bbr_off\n{% endif %}\n"
+  - service: input_select.select_option
+    data:
+      entity_id: input_number.scene_bbr
+      option: '-'
+- id: scene_living_room
+  alias: Scene Living Room
+  trigger:
+  - platform: state
+    entity_id: input_select.scene_lr
+  action:
+  - service: scene.turn_on
+    data_template:
+      entity_id: "{% if is_state( \"input_select.scene_lr\", \"Nightlight\" ) %}\n\
+        \  scene.lr_nightlight\n{%-elif is_state( \"input_select.scene_lr\", \"Dimmed\"\
+        \ ) %}\n  scene.lr_dimmed\n{%-elif is_state( \"input_select.scene_lr\", \"\
+        Relax\" ) %}\n  scene.lr_relax\n{%-elif is_state( \"input_select.scene_lr\"\
+        , \"Read\" ) %}\n  scene.lr_read\n{%-elif is_state( \"input_select.scene_lr\"\
+        , \"Bright\" ) %}\n  scene.lr_concentrate\n{%-elif is_state( \"input_select.scene_lr\"\
+        , \"Knitting\" ) %}\n  scene.lr_knitting\n{%-elif is_state( \"input_select.scene_lr\"\
+        , \"Off\" ) %}\n  scene.lr_off\n{% endif %}\n"
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.scene_lr
+      option: '-'
+- id: scene_master_bedroom
+  alias: Scene Master bedroom
+  trigger:
+  - platform: state
+    entity_id: input_select.scene_mbr
+  action:
+  - service: scene.turn_on
+    data_template:
+      entity_id: "{% if is_state( \"input_select.scene_mbr\", \"Nightlight\" ) %}\n\
+        \  scene.mbr_nightlight\n{%-elif is_state( \"input_select.scene_mbr\", \"\
+        Dimmed\" ) %}\n  scene.mbr_dimmed\n{%-elif is_state( \"input_select.scene_mbr\"\
+        , \"Bright\" ) %}\n  scene.mbr_bright\n{%-elif is_state( \"input_select.scene_mbr\"\
+        , \"Off\" ) %}\n  scene.mbr_off\n{% endif %}\n"
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.scene_mbr
+      option: '-'
+- id: scene_yorrick_bedroom
+  alias: Scene Yorrick bedroom
+  trigger:
+  - platform: state
+    entity_id: input_select.scene_ybr
+  action:
+  - service: scene.turn_on
+    data_template:
+      entity_id: "{% if is_state( \"input_select.scene_mbr\", \"Nightlight\" ) %}\n\
+        \  scene.ybr_nightlight\n{%-elif is_state( \"input_select.scene_mbr\", \"\
+        Dimmed\" ) %}\n  scene.ybr_dimmed\n{%-elif is_state( \"input_select.scene_mbr\"\
+        , \"Bright\" ) %}\n  scene.ybr_bright\n{%-elif is_state( \"input_select.scene_mbr\"\
+        , \"Off\" ) %}\n  scene.ybr_off\n{% endif %}\n"
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.scene_ybr
+      option: '-'
+- id: study_ok
+  alias: Study OK
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.microserver_temperature_ambient
+    above: 24
+  action:
+  - service: homeassistant.turn_off
+    entity_id: switch.aeotec_zw075_smart_switch_gen5_switch_2_0
+- id: study_too_warm
+  alias: Study too warm
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.microserver_temperature_ambient
+    above: 25
+  action:
+  - service: homeassistant.turn_on
+    entity_id: switch.aeotec_zw075_smart_switch_gen5_switch_2_0
+- id: notify_update
+  alias: NOTIFY Adrian when UPDATE is available
+  trigger:
+  - entity_id: updater.updater
+    platform: state
+  condition:
+  - condition: template
+    value_template: '{{ states("updater.updater") != "unknown" }}'
+  action:
+  - data_template:
+      message: Home Assistant {{ states("updater.updater") }} is now available.
+    service: notify.notify_adrian
+  - data_template:
+      message: Home Assistant {{ states("updater.updater") }} is now available.
+      title: 'HomeAssistant:'
+    service: notify.po
+- id: turn_off_wireless_charger_after_delay
+  alias: Turn off wireless charger after delay
+  trigger:
+  - entity_id: switch.aeotec_zw075_smart_switch_gen5_switch
+    platform: state
+    to: 'on'
+  action:
+  - entity_id: script.wireless_charger_set_timeout
+    service: homeassistant.turn_on
+- id: xmas_lights_off_after_10pm
+  alias: Xmas Lights off after 10pm
+  trigger:
+  - at: '22:00:00'
+    platform: time
+  action:
+  - entity_id: switch.aeotec_zw075_smart_switch_gen5_switch
+    service: homeassistant.turn_off
+  - data:
+      message: Christmas Lights Turned off
+      target:
+      - email/adrian@adrian-merwood.net
+    service: notify.pb
+  - data:
+      message: Christmas Lights Turned off
+      title: 'HomeAssistant:'
+    service: notify.po
+- id: xmas_lights_on_around_sunset
+  alias: Xmas Lights on at sunset
+  trigger:
+  - event: sunset
+    offset: 00:00:00
+    platform: sun
+  action:
+  - entity_id: switch.aeotec_zw075_smart_switch_gen5_switch
+    service: homeassistant.turn_on
+  - data:
+      message: Christmas Lights Turned on
+      title: 'HomeAssistant:'
+    service: notify.po
+- id: door_opened_and_no_one_at_home
+  alias: Door Opened no one at home
+  trigger:
+  - entity_id: binary_sensor.neo_coolcam_doorwindow_detector_frontdoor, binary_sensor.neo_coolcam_doorwindow_detector_backdoor2
+    platform: state
+    to: 'on'
+  action:
+  - service: notify.po
+    data_template:
+      title: 'HomeAssistant:'
+      message: '{{ trigger.to_state.attributes.friendly_name }} Opened'
+  condition:
+  - condition: state
+    entity_id: input_boolean.door_notifications
+    state: 'on'
+- id: motion_notification
+  alias: Motion Notification
+  action:
+  - service: notify.po
+    data_template:
+      title: 'HomeAssistant:'
+      message: '{{ trigger.to_state.attributes.friendly_name }} has detected movement'
+  condition:
+  - condition: state
+    entity_id: input_boolean.motion_notifications
+    state: 'on'
+  trigger:
+  - entity_id: binary_sensor.neo_coolcam_battery_powered_pir_sensor_garage, binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    platform: state
+    to: 'on'
+- id: generate_z-wave_graph
+  alias: Generate Z-Wave graph
+  trigger:
+    platform: time
+    minutes: /5
+    seconds: 0
+  action:
+    service: shell_command.z_wave_graph
+- action:
+  - data:
+      message: Flood in the Utility
+      priority: '1'
+      title: 'HomeAssistant:'
+    service: notify.po
+  alias: Flood in Utility
+  condition: []
+  id: '1518770274752'
+  trigger:
+  - entity_id: binary_sensor.fibaro_system_fgfs101_flood_sensor_utilityflood
+    platform: state
+    to: 'on'
+- id: ActionsWhenEveryoneLeaves
+  alias: Actions When Everyone Leaves
+  trigger:
+    platform: state
+    entity_id: group.family
+    to: not_home
+    for:
+      minutes: 10
+  action:
+  - service: homeassistant.turn_off
+    entity_id: group.all_lights
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.door_notifications
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.motion_notifications
+- id: DoorNotificationsOffWhenSomeoneArrivesHome
+  alias: Door Notifications Off When Someone Arrives Home
+  trigger:
+    platform: state
+    entity_id: group.family
+    to: home
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.door_notifications
+      state: 'on'
+    - condition: time
+      after: 05:00:00
+      before: 00:00:01
+  action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.door_notifications
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.motion_notifications
+
+- id: turn_on_hallway_light_when_movement
+  alias: Turn on Hallway light when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    to: 'on'
+  condition:
+      condition: or
+      conditions:
+      - condition: sun
+        after: sunset
+      - condition: sun
+        before: sunrise
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.living_room_mood
+
+- id: turn_off_hallway_light_after_delay
+  alias: Turn off hallway light 10 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    to: 'off'
+    for:
+      minutes: 10
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.living_room_mood

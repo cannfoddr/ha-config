@@ -1,0 +1,3 @@
+ - alias: Cool down the Study if its too hot
+   trigger:
+     platform:  

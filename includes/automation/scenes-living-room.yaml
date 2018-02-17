@@ -1,0 +1,27 @@
+alias: Scene Living Room
+trigger:
+  platform: state
+  entity_id: input_select.scene_lr
+action:
+  - service: scene.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state( "input_select.scene_lr", "Nightlight" ) %}
+          scene.lr_nightlight
+        {%-elif is_state( "input_select.scene_lr", "Dimmed" ) %}
+          scene.lr_dimmed
+        {%-elif is_state( "input_select.scene_lr", "Relax" ) %}
+          scene.lr_relax
+        {%-elif is_state( "input_select.scene_lr", "Read" ) %}
+          scene.lr_read
+        {%-elif is_state( "input_select.scene_lr", "Bright" ) %}
+          scene.lr_concentrate
+        {%-elif is_state( "input_select.scene_lr", "Knitting" ) %}
+          scene.lr_knitting
+        {%-elif is_state( "input_select.scene_lr", "Off" ) %}
+          scene.lr_off
+        {% endif %}
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.scene_lr
+      option: "-"

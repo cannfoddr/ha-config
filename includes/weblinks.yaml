@@ -1,0 +1,27 @@
+entities:
+- name: Router
+  url: https://192.168.1.1
+
+- name: Wi-Fi Controller
+  url: https://docker.merwood.com:8643
+
+- name: ESXI
+  url: http://esxi.merwood.com/ui
+
+- name: HP ILO
+  url: http://msgen8.merwood.com
+
+- name: Media Server Plex Diamondhead
+  url: http://diamondhead.merwood.com:32400/web
+
+- name: SabNZBD
+  url: https://sabnzbd.merwood.com
+
+- name: Sonarr
+  url: https://sonarr.merwood.com
+
+- name: Radarr
+  url: https://radarr.merwood.com
+
+- name: Synology
+  url: https://gateway.merwood.com:5001

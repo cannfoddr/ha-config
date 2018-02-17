@@ -1,0 +1,10 @@
+alias: Brightness Yorrick Bedroom Sync
+trigger:
+  platform: state
+  entity_id: light.hue_white_lamp_3
+  to: "on"
+action:
+  service: input_number.set_value
+  data_template:
+    entity_id: input_number.brightness_ybr
+    value: '{{ trigger.to_state.attributes.brightness|float }}'

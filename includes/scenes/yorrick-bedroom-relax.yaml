@@ -1,0 +1,5 @@
+name: YBR Bright
+entities:
+  light.hue_white_lamp_3:
+    state: on
+    brightness: 144

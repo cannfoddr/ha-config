@@ -1,0 +1,13 @@
+############################################################
+#
+# Home Assistant Cameras View
+#
+############################################################
+
+cameras:
+  view: yes
+  entities:
+    - group.arlo
+Arlo:
+  - sensor.arlo_cameras
+  - sensor.battery_level_4g_camera

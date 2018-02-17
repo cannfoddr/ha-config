@@ -1,0 +1,22 @@
+name: All Lights Off
+entities:
+  light.hue_color_spot_5:
+    state: off
+  light.hue_color_spot_6:
+    state: off
+  light.hue_color_spot_3:
+    state: off
+  light.hue_color_spot_4:
+    state: off
+  light.hue_white_lamp_1:
+    state: off
+  light.hue_white_lamp_2:
+    state: off
+  light.hue_white_lamp_3:
+    state: off
+  light.master_bedroom:
+    state: off
+  light.veroniques_bedside_light:
+    state: off
+  light.adrians_bedside_light:
+    state: off

@@ -1,0 +1,2 @@
+binary_sensor.neo_coolcam_doorwindow_detector_frontdoor:
+  device_class: door

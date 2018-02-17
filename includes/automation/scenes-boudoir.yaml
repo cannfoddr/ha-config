@@ -1,0 +1,21 @@
+alias: Scene Boudoir
+trigger:
+  platform: state
+  entity_id: input_select.scene_bbr
+action:
+  - service: scene.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state( "input_select.scene_mbr", "Nightlight" ) %}
+          scene.bbr_nightlight
+        {%-elif is_state( "input_select.scene_mbr", "Dimmed" ) %}
+          scene.bbr_dimmed
+        {%-elif is_state( "input_select.scene_mbr", "Bright" ) %}
+          scene.bbr_bright
+        {%-elif is_state( "input_select.scene_mbr", "Off" ) %}
+          scene.bbr_off
+        {% endif %}
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.scene_bbr
+      option: "-"

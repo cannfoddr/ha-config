@@ -1,0 +1,4 @@
+name: BBR Off
+entities:
+  light.hue_white_lamp_2:
+    state: off

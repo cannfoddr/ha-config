@@ -1,0 +1,115 @@
+############################################################
+#
+# Home Assistant Default View
+#
+############################################################
+default_view:
+  name: Main
+  view: yes
+  entities:
+    - persistent_notification.invalid_config
+    - configurator.philips_hue
+    - updater.updater
+    - group.weather
+    - group.heating
+    - group.internet
+    - group.doors
+    - group.motion_sensors
+    - group.flood_sensors
+    - group.family
+    - group.living_room_door
+    - group.living_room_sofa
+    - group.hallway
+    - group.master_bedroom
+    - group.yorrick_bedroom
+    - group.boudoir
+
+Weather:
+  - sensor.met_office_weather
+  - sensor.met_office_temperature
+  - sensor.met_office_feels_like_temperature
+  - sensor.met_office_humidity
+  - sensor.met_office_uv
+  - sensor.met_office_probability_of_precipitation
+  - sensor.met_office_visibility
+  - sensor.met_office_wind_direction
+  - sensor.met_office_wind_speed
+  - sensor.met_office_wind_gust
+
+Heating:
+  - sensor.heating_temperature
+  - sensor.heating_humidity
+  - sensor.heating_tado_mode
+
+Internet:
+  - sensor.speedtest_ping
+  - sensor.speedtest_upload
+  - sensor.speedtest_download
+
+Family:
+  - device_tracker.adrian_iphone6s
+  - device_tracker.androidc75258685f21c5bf
+  - device_tracker.fionamedsiphone
+  - device_tracker.d4389c3eb1a1
+
+Doors:
+  - binary_sensor.neo_coolcam_doorwindow_detector_frontdoor
+  - binary_sensor.neo_coolcam_doorwindow_detector_backdoor2
+
+motion_sensors:
+  name: Motion Sensors
+  entities:
+    - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    - binary_sensor.neo_coolcam_battery_powered_pir_sensor_garage
+
+flood_sensors:
+  name: Flood Sensors
+  entities:
+    - binary_sensor.fibaro_system_fgfs101_flood_sensor_utilityflood
+
+living_room_door:
+  name: Living Room Door
+  entities:
+    - light.living_room_ikea_1
+    - light.living_room_ikea_2
+    - light.living_room_ikea_3
+    - light.living_room_ikea_4
+
+living_room_sofa:
+  name: Living Room Sofa
+  entities:
+    - light.hue_color_spot_5
+    - light.hue_color_spot_6
+    - light.hue_color_spot_3
+    - light.hue_color_spot_4
+    - input_number.brightness_lr
+    - input_select.scene_lr
+    - input_select.living_room_tv
+
+hallway:
+  name: Hallway
+  entities:
+    - light.living_room_mood
+
+master_bedroom:
+  name: Master Bedroom
+  entities:
+    - light.master_bedroom_main_light
+    - light.veroniques_bedside_light
+    - light.adrians_bedside_light
+    - input_select.scene_mbr
+    - switch.bedroom_switch
+
+yorrick_bedroom:
+  name: Yorrick's Bedroom
+  entities:
+    - light.hue_white_lamp_3
+    - input_number.brightness_ybr
+    - input_select.scene_ybr
+
+boudoir:
+  name: Boudoir
+  entities:
+    - light.hue_white_lamp_2
+    - input_number.brightness_bbr
+    - input_select.scene_bbr

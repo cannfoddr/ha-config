@@ -1,0 +1,11 @@
+name: MBR Relax
+entities:
+  light.master_bedroom_main_light:
+    state: off
+    brightness: 144
+  light.veroniques_bedside_light:
+    state: on
+    brightness: 144
+  light.adrians_bedside_light:
+    state: on
+    brightness: 144

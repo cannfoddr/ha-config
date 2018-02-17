@@ -1,0 +1,6 @@
+- platform: synology
+  url: https://gateway.merwood.com:5001
+  username: automation
+  password: KbEkE9Y6zjqfCsg8EoUbt7dybhEMPenPDKasb6WGJYWRbbjC4KMW2mBArf3iQFuZ
+  verify_ssl: False
+- platform: arlo

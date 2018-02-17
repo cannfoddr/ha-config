@@ -1,0 +1,12 @@
+door_notifications:
+  name: "Door Notifications"
+  icon: mdi:door
+  initial: "off"
+motion_notifications:
+  name: "Motion Notifications"
+  icon: mdi:run-fast
+  initial: "off"
+alarm_set:
+  name: "Alarm Set"
+  icon: mdi:alarm-light
+  initial: "off"

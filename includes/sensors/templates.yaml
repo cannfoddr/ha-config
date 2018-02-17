@@ -1,0 +1,52 @@
+############################################################
+#
+#  Server Templates
+#
+############################################################
+
+platform: template
+sensors:
+  microserver_fan:
+    value_template: '{{states.sensor.microserver_server_health.attributes.fans["Fan 1"]["speed"][0] }}'
+    unit_of_measurement: '%'
+    entity_id: sensor.microserver_server_health
+    friendly_name: "Fan Speed"
+
+  template_front_door:
+    friendly_name: 'Front Door'
+    value_template: >-
+      {%- if is_state("binary_sensor.neo_coolcam_doorwindow_detector_frontdoor", "off") -%}
+        closed
+      {%- elif is_state("binary_sensor.neo_coolcam_doorwindow_detector_frontdoor", "on") -%}
+        open
+      {%- else -%}
+        unknown
+      {%- endif -%}
+    icon_template: >-
+      {%- if is_state("binary_sensor.neo_coolcam_doorwindow_detector_frontdoor", "off") -%}
+        mdi:door-closed
+      {%- elif is_state("binary_sensor.neo_coolcam_doorwindow_detector_frontdoor", "on") -%}
+        mdi:door-open
+      {%- else -%}
+        mdi:_door
+      {%- endif -%}
+
+  template_back_door:
+    friendly_name: 'Back Door'
+    value_template: >-
+      {%- if is_state("binary_sensor.neo_coolcam_doorwindow_detector_backdoor2", "off") -%}
+        closed
+      {%- elif is_state("binary_sensor.neo_coolcam_doorwindow_detector_backdoor2", "on") -%}
+        open
+      {%- else -%}
+        unknown
+      {%- endif -%}
+    icon_template: >-
+      {%- if is_state("binary_sensor.neo_coolcam_doorwindow_detector_frontdoor", "off") -%}
+        mdi:door-closed
+      {%- elif is_state("binary_sensor.neo_coolcam_doorwindow_detector_frontdoor", "on") -%}
+        mdi:door-open
+      {%- else -%}
+        mdi:door
+      {%- endif -%}
+

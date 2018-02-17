@@ -1,0 +1,140 @@
+# Wireless charger
+wireless_charger_set_timeout:
+  alias: "Set timeout on wireless charger"
+  sequence:
+    # Cancel ev. old timers
+    - service: script.turn_off
+      data:
+         entity_id: script.wireless_charger_timeout
+    - service: switch.turn_on
+      data:
+        entity_id: switch.wenzhou_tkb_control_system_unknown_type0004_id0002_switch_3_0
+    # Set new timer
+    - service: script.turn_on
+      data:
+        entity_id: script.wireless_charger_timeout
+
+wireless_charger_timeout:
+  alias: "Turn off wireless charger after three hours"
+  sequence:
+    - delay:
+        hours: 3
+    - service: switch.turn_off
+      data:
+        entity_id: switch.wenzhou_tkb_control_system_unknown_type0004_id0002_switch_3_0
+
+# Living Room lights timeout
+living_room_lights_set_timeout:
+  alias: "Set timeout for living room lights"
+  sequence:
+    # Cancel ev. old timers
+    - service: script.turn_off
+      data:
+         entity_id: script.living_room_lights_timeout
+    # Set new timer
+    - service: script.turn_on
+      data:
+        entity_id: script.living_room_lights_timeout
+
+living_room_lights_timeout:
+  alias: "Turn off living room lights after 10 minutes of inactivity"
+  sequence:
+    - delay:
+        minutes: !secret living_room_lights_timeout
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.hue_color_spot_5
+          - light.hue_color_spot_6
+          - light.hue_color_spot_3
+          - light.hue_color_spot_4
+
+# Master Bedroom lights timeout
+master_bedroom_lights_set_timeout:
+  alias: "Set timeout for Master Bedroom lights"
+  sequence:
+    # Cancel ev. old timers
+    - service: script.turn_off
+      data:
+         entity_id: script.master_bedroom_lights_timeout
+    # Set new timer
+    - service: script.turn_on
+      data:
+        entity_id: script.master_bedroom_lights_timeout
+
+master_bedroom_lights_timeout:
+  alias: "Turn off Master Bedroom lights after inactivity"
+  sequence:
+    - delay:
+        minutes: !secret master_bedroom_lights_timeout
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.hue_white_lamp_1
+
+# Boudoir lights timeout
+boudoir_lights_set_timeout:
+  alias: "Set timeout for Boudoir lights"
+  sequence:
+    # Cancel ev. old timers
+    - service: script.turn_off
+      data:
+         entity_id: script.boudoir_lights_timeout
+    # Set new timer
+    - service: script.turn_on
+      data:
+        entity_id: script.boudoir_lights_timeout
+
+boudoir_lights_timeout:
+  alias: "Turn off boudour lights after inactivity"
+  sequence:
+    - delay:
+        minutes: !secret boudoir_lights_timeout
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.hue_white_lamp_2
+
+# Yorrick Bedroom lights timeout
+yorrick_bedroom_lights_set_timeout:
+  alias: "Set timeout for Yorrick Bedroom lights"
+  sequence:
+    # Cancel ev. old timers
+    - service: script.turn_off
+      data:
+         entity_id: script.yorrick_bedroom_lights_timeout
+    # Set new timer
+    - service: script.turn_on
+      data:
+        entity_id: script.yorrick_bedroom_lights_timeout
+
+yorrick_bedroom_lights_timeout:
+  alias: "Turn off Yorrick Bedroom lights after inactivity"
+  sequence:
+    - delay:
+        minutes: !secret yorrick_bedroom_lights_timeout
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.hue_white_lamp_3
+
+input_select_harmony:
+    alias: "Start Harmony activity from input select"
+    sequence:
+      - service: remote.turn_on
+        data_template:
+          entity_id: remote.living_room_tv
+          activity: >
+            {% if is_state("input_select.living_room_tv", "PowerOff") %}
+                -1
+            {% elif is_state("input_select.living_room_tv", "Watch Netflix") %}
+                22733569
+            {% elif is_state("input_select.living_room_tv", "Plex") %}
+                22733907
+            {% elif is_state("input_select.living_room_tv", "Watch TV") %}
+                22733891
+            {% elif is_state("input_select.living_room_tv", "Play PS4") %}
+                16458546           
+            {% elif is_state("input_select.living_room_tv", "WATCH DVD BLURAY") %}
+                12458193
+            {% endif %}

@@ -1,0 +1,10 @@
+name: LR Dimmed
+entities:
+  light.living_room_sofa:
+    state: on
+    brightness: 77
+    color_temp: 443
+  light.living_room_door:
+    state: on
+    brightness: 77
+    color_temp: 443

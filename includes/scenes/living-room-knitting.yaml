@@ -1,0 +1,12 @@
+name: LR Knitting
+entities:
+  light.hue_color_spot_5:
+    state: on
+    brightness: 178
+    color_temp: 262
+  light.hue_color_spot_6:
+    state: off
+  light.hue_color_spot_3:
+    state: off
+  light.hue_color_spot_4:
+    state: off

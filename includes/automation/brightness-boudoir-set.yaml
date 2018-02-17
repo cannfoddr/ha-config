@@ -1,0 +1,11 @@
+alias: Brightness Boudoir
+trigger:
+  platform: state
+  entity_id: input_number.brightness_bbr
+action:
+  service: light.turn_on
+  data:
+    entity_id:
+      - light.hue_white_lamp_2
+  data_template:
+    brightness: '{{ states( "input_number.brightness_bbr" )|round( 0 ) }}'

@@ -1,0 +1,10 @@
+name: LR Bright
+entities:
+  light.living_room_sofa:
+    state: on
+    brightness: 255
+    color_temp: 363
+  light.living_room_door:
+    state: on
+    brightness: 255
+    color_temp: 363

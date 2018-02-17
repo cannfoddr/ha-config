@@ -1,0 +1,5 @@
+name: BBR Bright
+entities:
+  light.hue_white_lamp_2:
+    state: on
+    brightness: 144

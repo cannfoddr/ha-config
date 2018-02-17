@@ -1,0 +1,28 @@
+alias: 'Turn on living room at sunset'
+trigger:
+  platform: sun
+  event: sunset
+  offset: "-00:45:00"
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: group.presence
+      state: 'home'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: light.hue_color_spot_5
+        state: 'off'
+      - condition: state
+        entity_id: light.hue_color_spot_6
+        state: 'off'
+      - condition: state
+        entity_id: light.hue_color_spot_3
+        state: 'off'
+      - condition: state
+        entity_id: light.hue_color_spot_4
+        state: 'off'
+action:
+  service: scene.turn_on
+  entity_id: scene.lr_relax

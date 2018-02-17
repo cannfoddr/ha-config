@@ -1,0 +1,8 @@
+alias: Turn off boudoir room lights after timer
+trigger:
+  platform: state
+  entity_id: light.hue_white_lamp_2
+  state: 'on'
+action:
+  service: homeassistant.turn_on
+  entity_id: script.boudoir_lights_set_timeout

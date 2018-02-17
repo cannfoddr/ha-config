@@ -1,0 +1,10 @@
+name: LR Concentrate
+entities:
+  light.living_room_sofa:
+    state: on
+    brightness: 255
+    color_temp: 230
+  light.living_room_door:
+    state: on
+    brightness: 255
+    color_temp: 230

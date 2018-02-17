@@ -1,0 +1,6 @@
+name: LR Off
+entities:
+  light.living_room_sofa:
+    state: off
+  light.living_room_door:
+    state: off
