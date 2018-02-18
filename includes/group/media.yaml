@@ -11,6 +11,7 @@ media:
     - group.roku
     - group.tv
     - group.yorrick
+    - group.apple
     - group.firetv
     - group.plex
 Sonos:

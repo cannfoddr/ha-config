@@ -1,4 +1,4 @@
-- id: brightness_boudoir_set
+- id: brightness_boudoir
   alias: Brightness Boudoir
   trigger:
   - platform: state
@@ -199,13 +199,13 @@
   - condition: template
     value_template: '{{ states("updater.updater") != "unknown" }}'
   action:
-  - data_template:
+  - service: notify.notify_adrian
+    data_template:
       message: Home Assistant {{ states("updater.updater") }} is now available.
-    service: notify.notify_adrian
-  - data_template:
+  - service: notify.po_adrian
+    data_template:
       message: Home Assistant {{ states("updater.updater") }} is now available.
       title: 'HomeAssistant:'
-    service: notify.po
 - id: turn_off_wireless_charger_after_delay
   alias: Turn off wireless charger after delay
   trigger:
@@ -223,15 +223,10 @@
   action:
   - entity_id: switch.aeotec_zw075_smart_switch_gen5_switch
     service: homeassistant.turn_off
-  - data:
-      message: Christmas Lights Turned off
-      target:
-      - email/adrian@adrian-merwood.net
-    service: notify.pb
-  - data:
+  - service: notify.po_adrian
+    data:
       message: Christmas Lights Turned off
       title: 'HomeAssistant:'
-    service: notify.po
 - id: xmas_lights_on_around_sunset
   alias: Xmas Lights on at sunset
   trigger:
@@ -241,10 +236,10 @@
   action:
   - entity_id: switch.aeotec_zw075_smart_switch_gen5_switch
     service: homeassistant.turn_on
-  - data:
+  - service: notify.po_adrian
+    data:
       message: Christmas Lights Turned on
       title: 'HomeAssistant:'
-    service: notify.po
 - id: door_opened_and_no_one_at_home
   alias: Door Opened no one at home
   trigger:
@@ -252,7 +247,7 @@
     platform: state
     to: 'on'
   action:
-  - service: notify.po
+  - service: notify.po_parents
     data_template:
       title: 'HomeAssistant:'
       message: '{{ trigger.to_state.attributes.friendly_name }} Opened'
@@ -263,10 +258,14 @@
 - id: motion_notification
   alias: Motion Notification
   action:
-  - service: notify.po
+  - service: notify.po_parents
     data_template:
-      title: 'HomeAssistant:'
-      message: '{{ trigger.to_state.attributes.friendly_name }} has detected movement'
+      data:
+        title: 'HomeAssistant:'
+        sound: 'alien'
+        priority: 1
+      message: >
+        {{ trigger.to_state.attributes.friendly_name }} has detected movement
   condition:
   - condition: state
     entity_id: input_boolean.motion_notifications
@@ -284,11 +283,11 @@
   action:
     service: shell_command.z_wave_graph
 - action:
-  - data:
+  - service: notify.po_parents
+    data:
       message: Flood in the Utility
-      priority: '1'
+      priority: 1
       title: 'HomeAssistant:'
-    service: notify.po
   alias: Flood in Utility
   condition: []
   id: '1518770274752'
@@ -311,6 +310,12 @@
     entity_id: input_boolean.door_notifications
   - service: input_boolean.turn_on
     entity_id: input_boolean.motion_notifications
+  - service: notify.po_parents
+    data:
+      message: 'I think everyone has now left the house.'
+      priority: 1
+      title: 'HomeAssistant:'
+
 - id: DoorNotificationsOffWhenSomeoneArrivesHome
   alias: Door Notifications Off When Someone Arrives Home
   trigger:
@@ -331,6 +336,11 @@
     entity_id: input_boolean.door_notifications
   - service: input_boolean.turn_off
     entity_id: input_boolean.motion_notifications
+  - service: notify.po_parents
+    data:
+      message: "I think someone has arrved home...one day I might be able to tell you who" 
+      priority: 1
+      title: 'HomeAssistant:'
 
 - id: turn_on_hallway_light_when_movement
   alias: Turn on Hallway light when there is movement
@@ -350,13 +360,26 @@
     entity_id: light.living_room_mood
 
 - id: turn_off_hallway_light_after_delay
-  alias: Turn off hallway light 10 minutes after last movement
+  alias: Turn off hallway light X minutes after last movement
   trigger:
     platform: state
     entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
     to: 'off'
     for:
-      minutes: 10
+      minutes: 5
   action:
     service: homeassistant.turn_off
     entity_id: light.living_room_mood
+
+- id: sync_living_room_remote
+  alias: 'Sync Living Room Remote'
+  trigger:
+    platform: state
+    entity_id: remote.harmony_elite
+  action:
+    service: input_select.select_option
+    data_template:
+      entity_id: input_select.living_room_tv
+      option: >
+        {{ states.remote.living_room_tv.attributes.current_activity }}
+

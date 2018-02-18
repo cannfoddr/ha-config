@@ -52,6 +52,6 @@ living_room_tv:
     - Watch TV
     - Watch Apple TV
     - Play PS4
-    - WATCH DVD BLURAY
+    - Watch DVD Blu-Ray
   initial: PowerOff
   icon: mdi:monitor

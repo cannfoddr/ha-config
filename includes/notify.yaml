@@ -9,13 +9,14 @@
   recipient: !secret am_email
 
 - platform: pushover
-  name: po
+  name: po_adrian
   api_key: !secret po_api
-  user_key: !secret po_user
+  user_key: !secret po_user_adrian
 
-- platform: pushbullet
-  name: pb
-  api_key: !secret pb_api
+- platform: pushover
+  name: po_parents
+  api_key: !secret po_api
+  user_key: !secret po_group_parents
 
 - platform: gntp
   name: growl
