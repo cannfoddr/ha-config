@@ -41,7 +41,7 @@ logbook:
 recorder:
   purge_interval: 2
   purge_keep_days: 30
-  db_url: mysql://HAuser:HApassword@192.168.1.190/homeassistant
+  db_url: !secret recorderdb_url
 
 # Emulated Hue Bridge
 emulated_hue:
@@ -129,7 +129,7 @@ remote:
     name: Living Room TV
     username: !secret harmony_email # The email address associated with your Harmony hub account
     password: !secret harmony_pass # Your password
-    host: 192.168.1.108 #replace with the IP of your Hub.  This can be found in the Harmony app under About, Versions.
+    host: 192.168.1.147 #replace with the IP of your Hub.  This can be found in the Harmony app under About, Versions.
     port: 5222 # Default is 5222
     activity: WATCH TV # Optional, This is the name of the activity that will launch if you just power on the remote using the default device created in HASS.
 

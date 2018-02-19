@@ -271,9 +271,26 @@
     entity_id: input_boolean.motion_notifications
     state: 'on'
   trigger:
-  - entity_id: binary_sensor.neo_coolcam_battery_powered_pir_sensor_garage, binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+  - entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
     platform: state
     to: 'on'
+
+- id: garage_notification
+  alias: Garage Notification
+  action:
+  - service: notify.po_adrian
+    data_template:
+      data:
+        title: 'HomeAssistant:'
+        sound: 'alien'
+        priority: 1
+      message: >
+        {{ trigger.to_state.attributes.friendly_name }} has detected movement
+  trigger:
+  - entity_id: binary_sensor.neo_coolcam_battery_powered_pir_sensor_garage
+    platform: state
+    to: 'on'
+
 - id: generate_z-wave_graph
   alias: Generate Z-Wave graph
   trigger:

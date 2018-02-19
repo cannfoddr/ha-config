@@ -15,9 +15,9 @@
   name: "boostbox"
   host: "192.168.1.180"
 - platform: wake_on_lan
-  mac_address: "00-04-20-ef-66-50"
+  mac_address: "c8-db-26-1-27-f2"
   name: "HarmonyHub"
-  host: "192.168.1.108"
+  host: "192.168.1.147"
 - platform: wake_on_lan
   mac_address: "74-d4-35-15-56-0d"
   name: "Ethans-PC"

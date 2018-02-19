@@ -271,3 +271,6 @@ sensor.wenzhou_tkb_control_system_tz69_smart_energy_plug_in_switch_previous_read
 sensor.aeotec_zw075_smart_switch_gen5_previous_reading_4:
   platform: zwave
   unique_id: 13-72057594261045394
+media_player.plex_web_safari_2:
+  platform: plex
+  unique_id: d2evggvv51194ir8yhbmvzue
