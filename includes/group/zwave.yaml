@@ -20,23 +20,24 @@ Controller:
 
 Door:
   entities:
-    - zwave.neo_coolcam_doorwindow_detector
-    - zwave.neo_coolcam_doorwindow_detector_2
+    - zwave.back_door_detector
+    - zwave.front_door_detector
+    - zwave.patio_door_detector
 
 PIR:
   entities:
-    - zwave.fibaro_system_fgms001zw5_motion_sensor
-    - zwave.neo_coolcam_battery_powered_pir_sensor
+    - zwave.garage_pir
+    - zwave.living_room_pir
 
 Flood:
   entities:
-    - zwave.fibaro_system_fgfs101_flood_sensor
+    - zwave.utility_flood_sensor
 
 Switches:
   entities:
-    - zwave.aeotec_zw075_smart_switch_gen5
-    - zwave.aeotec_zw075_smart_switch_gen5_2
-    - Zwave.wenzhou_tkb_control_system_tz69_smart_energy_plug_in_switch
+    - zwave.garage_switch
+    - zwave.hall_switch
+    - zwave.kitchen_switch
 
 Extenders:
   entities:

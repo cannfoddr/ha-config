@@ -7,7 +7,3 @@ sensor.speedtest_upload:
 sensor.microserver_temperature_ambient:
   friendly_name: Ambient
   icon: mdi:thermometer
-sensor.template_back_door:
-  device_class: door
-sensor.template_front_door:
-  device_class: door

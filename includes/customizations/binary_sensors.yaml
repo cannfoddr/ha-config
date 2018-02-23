@@ -1,24 +1,30 @@
-binary_sensor.neo_coolcam_battery_powered_pir_sensor_garage:
+binary_sensor.garage_pir_garage:
   icon: mdi:run-fast
   friendly_name: "Garage Motion"
   device_class: motion
 
-binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor:
+binary_sensor.living_room_pir_livingroom:
   icon: mdi:run-fast
   friendly_name: "Living Room Motion"
   device_class: motion
 
-binary_sensor.fibaro_system_fgfs101_flood_sensor_utilityflood:
+binary_sensor.utility_flood_sensor_sensor:
   icon: mdi:water
   friendly_name: "Utility Flood"
   device_class: moisture
  
-binary_sensor.neo_coolcam_doorwindow_detector_frontdoor:
+binary_sensor.front_door_detector_sensor:
   icon: mdi:door
   friendly_name: "Front Door"
   device_class: door
 
-binary_sensor.neo_coolcam_doorwindow_detector_backdoor2:
+binary_sensor.back_door_detector_sensor:
   icon: mdi:door
   friendly_name: "Back Door"
   device_class: door
+
+binary_sensor.patio_door_detector_sensor:
+  icon: mdi:door
+  friendly_name: "Patio Door"
+  device_class: door
+

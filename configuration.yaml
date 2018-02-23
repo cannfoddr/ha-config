@@ -121,8 +121,8 @@ input_boolean: !include includes/input-booleans.yaml
 sensor: !include_dir_list includes/sensors
 
 tado:
-  username: adrian@adrian-merwood.net
-  password: auto-heeting-wurks-wondefully
+  username: !secret tado_user
+  password: !secret tado_pass
 
 remote:
   - platform: harmony
@@ -135,7 +135,6 @@ remote:
 
 config:
 
-
 ios:
 
 arlo:
@@ -144,7 +143,6 @@ arlo:
 
 alarm_control_panel:
   - platform: arlo
-
 
 ffmpeg:
 

@@ -172,15 +172,7 @@
     data:
       entity_id: input_select.scene_ybr
       option: '-'
-- id: study_ok
-  alias: Study OK
-  trigger:
-  - platform: numeric_state
-    entity_id: sensor.microserver_temperature_ambient
-    above: 24
-  action:
-  - service: homeassistant.turn_off
-    entity_id: switch.aeotec_zw075_smart_switch_gen5_switch_2_0
+
 - id: study_too_warm
   alias: Study too warm
   trigger:
@@ -188,8 +180,11 @@
     entity_id: sensor.microserver_temperature_ambient
     above: 25
   action:
-  - service: homeassistant.turn_on
-    entity_id: switch.aeotec_zw075_smart_switch_gen5_switch_2_0
+  - service: notify.po_adrian
+    data:
+      message: Its getting warm in the study
+      title: 'HomeAssistant:'
+
 - id: notify_update
   alias: NOTIFY Adrian when UPDATE is available
   trigger:
@@ -206,22 +201,24 @@
     data_template:
       message: Home Assistant {{ states("updater.updater") }} is now available.
       title: 'HomeAssistant:'
+
 - id: turn_off_wireless_charger_after_delay
   alias: Turn off wireless charger after delay
   trigger:
-  - entity_id: switch.aeotec_zw075_smart_switch_gen5_switch
+  - entity_id: switch.hall_switch_switch
     platform: state
     to: 'on'
   action:
   - entity_id: script.wireless_charger_set_timeout
     service: homeassistant.turn_on
+
 - id: xmas_lights_off_after_10pm
   alias: Xmas Lights off after 10pm
   trigger:
   - at: '22:00:00'
     platform: time
   action:
-  - entity_id: switch.aeotec_zw075_smart_switch_gen5_switch
+  - entity_id: switch.garage_switch_switch
     service: homeassistant.turn_off
   - service: notify.po_adrian
     data:
@@ -234,7 +231,7 @@
     offset: 00:00:00
     platform: sun
   action:
-  - entity_id: switch.aeotec_zw075_smart_switch_gen5_switch
+  - entity_id: switch.garage_switch_switch
     service: homeassistant.turn_on
   - service: notify.po_adrian
     data:
@@ -243,7 +240,7 @@
 - id: door_opened_and_no_one_at_home
   alias: Door Opened no one at home
   trigger:
-  - entity_id: binary_sensor.neo_coolcam_doorwindow_detector_frontdoor, binary_sensor.neo_coolcam_doorwindow_detector_backdoor2
+  - entity_id: binary_sensor.back_door_detector_sensor, binary_sensor.front_door_detector_sensor, binary_sensor.patio_door_detector_sensor
     platform: state
     to: 'on'
   action:
@@ -271,7 +268,7 @@
     entity_id: input_boolean.motion_notifications
     state: 'on'
   trigger:
-  - entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+  - entity_id: binary_sensor.living_room_pir_livingroom
     platform: state
     to: 'on'
 
@@ -287,7 +284,7 @@
       message: >
         {{ trigger.to_state.attributes.friendly_name }} has detected movement
   trigger:
-  - entity_id: binary_sensor.neo_coolcam_battery_powered_pir_sensor_garage
+  - entity_id: binary_sensor.garage_pir_garage
     platform: state
     to: 'on'
 
@@ -309,7 +306,7 @@
   condition: []
   id: '1518770274752'
   trigger:
-  - entity_id: binary_sensor.fibaro_system_fgfs101_flood_sensor_utilityflood
+  - entity_id: binary_sensor.utility_flood_sensor_sensor
     platform: state
     to: 'on'
 - id: ActionsWhenEveryoneLeaves
@@ -363,7 +360,7 @@
   alias: Turn on Hallway light when there is movement
   trigger:
     platform: state
-    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    entity_id: binary_sensor.living_room_pir_livingroom
     to: 'on'
   condition:
       condition: or

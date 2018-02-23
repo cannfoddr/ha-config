@@ -16,6 +16,7 @@ default_view:
     - group.doors
     - group.motion_sensors
     - group.flood_sensors
+    - group.switches
     - group.family
     - group.living_room_door
     - group.living_room_sofa
@@ -50,22 +51,30 @@ Family:
   - device_tracker.adrian_iphone6s
   - device_tracker.androidc75258685f21c5bf
   - device_tracker.fionamedsiphone
-  - device_tracker.d4389c3eb1a1
+  - device_tracker.yorrick_phone
 
 Doors:
-  - binary_sensor.neo_coolcam_doorwindow_detector_frontdoor
-  - binary_sensor.neo_coolcam_doorwindow_detector_backdoor2
+  - binary_sensor.front_door_detector_sensor
+  - binary_sensor.back_door_detector_sensor
+  - binary_sensor.patio_door_detector_sensor
 
 motion_sensors:
   name: Motion Sensors
   entities:
-    - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
-    - binary_sensor.neo_coolcam_battery_powered_pir_sensor_garage
+    - binary_sensor.living_room_pir_livingroom
+    - binary_sensor.garage_pir_garage
 
 flood_sensors:
   name: Flood Sensors
   entities:
-    - binary_sensor.fibaro_system_fgfs101_flood_sensor_utilityflood
+    - binary_sensor.utility_flood_sensor_sensor
+
+switches:
+  name: Smart Switches
+  entities:
+    - switch.garage_switch_switch
+    - switch.kitchen_switch_switch
+    - switch.hall_switch_switch
 
 living_room_door:
   name: Living Room Door
