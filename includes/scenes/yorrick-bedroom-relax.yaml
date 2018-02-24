@@ -1,5 +1,5 @@
 name: YBR Bright
 entities:
-  light.hue_white_lamp_3:
+  light.yorricks_bedroom:
     state: on
     brightness: 144

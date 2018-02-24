@@ -1,0 +1,9 @@
+switch.living_room_smart_switch_switch:
+  friendly_name: "Living Room Switch"
+
+switch.kitchen_smart_switch_switch:
+  friendly_name: "Kitchen Switch"
+
+switch.garage_smart_switch_switch:
+  friendly_name: "Garage Switch"
+

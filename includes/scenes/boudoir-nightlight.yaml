@@ -1,5 +1,5 @@
 name: BBR Nightlight
 entities:
-  light.hue_white_lamp_2:
+  light.boudoir_2:
     state: on
     brightness: 1

@@ -1,4 +1,6 @@
 name: BBR Off
 entities:
-  light.hue_white_lamp_2:
+  light.boudoir_2:
+    state: off
+  light.boudoir_standard_lamp:
     state: off

@@ -13,9 +13,15 @@ light.hue_color_spot_4:
 light.hue_white_lamp_1:
   friendly_name: BR Light
   emulated_hue_hidden: true
-light.hue_white_lamp_2:
+light.boudoir_2:
   friendly_name: Boudoir Light
   emulated_hue_hidden: true
-light.hue_white_lamp_3:
+light.yorricks_bedroom:
   friendly_name: Yorrick Light
+  emulated_hue_hidden: true
+light.hallway_floor:
+  friendly_name: Hallway Floor Light
+  emulated_hue_hidden: true
+light.boudoir_standard_lamp:
+  friendly_name: Boudoir Standard Lamp
   emulated_hue_hidden: true

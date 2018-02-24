@@ -6,14 +6,14 @@
   action:
   - service: light.turn_on
     data:
-      entity_id: light.hue_white_lamp_2
+      entity_id: light.boudoir_2
     data_template:
       brightness: '{{ states( "input_number.brightness_bbr" )|round( 0 ) }}'
 - id: brighness_boudoir_sync
   alias: Brightness Boudoir Sync
   trigger:
   - platform: state
-    entity_id: light.hue_white_lamp_2
+    entity_id: light.boudoir_2
     to: 'on'
   action:
   - service: input_number.set_value
@@ -87,14 +87,14 @@
   - service: light.turn_on
     data:
       entity_id:
-      - light.hue_white_lamp_3
+      - light.yorricks_bedroom
     data_template:
       brightness: '{{ states( "input_number.brightness_ybr" )|round( 0 ) }}'
 - id: brightness_yorrick_bedroom_sync
   alias: Brightness Yorrick Bedroom Sync
   trigger:
   - platform: state
-    entity_id: light.hue_white_lamp_3
+    entity_id: light.yorricks_bedroom
     to: 'on'
   action:
   - service: input_number.set_value
@@ -307,6 +307,7 @@
   - entity_id: binary_sensor.utility_flood_sensor_sensor
     platform: state
     to: 'on'
+
 - id: ActionsWhenEveryoneLeaves
   alias: Actions When Everyone Leaves
   trigger:
@@ -369,7 +370,7 @@
         before: sunrise
   action:
     service: homeassistant.turn_on
-    entity_id: light.living_room_mood
+    entity_id: light.hallway_floor
 
 - id: turn_off_hallway_light_after_delay
   alias: Turn off hallway light X minutes after last movement
@@ -381,7 +382,7 @@
       minutes: 5
   action:
     service: homeassistant.turn_off
-    entity_id: light.living_room_mood
+    entity_id: light.hallway_floor
 
 - id: sync_living_room_remote
   alias: 'Sync Living Room Remote'

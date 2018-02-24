@@ -16,7 +16,6 @@ default_view:
     - group.doors
     - group.motion_sensors
     - group.flood_sensors
-    - group.switches
     - group.family
     - group.living_room_door
     - group.living_room_sofa
@@ -24,6 +23,14 @@ default_view:
     - group.master_bedroom
     - group.yorrick_bedroom
     - group.boudoir
+    - group.switch
+
+switch:
+  name: Smart Switches
+  entities:
+    - switch.kitchen_smart_switch_switch
+    - switch.living_room_smart_switch_switch
+    - switch.garage_smart_switch_switch
 
 Weather:
   - sensor.met_office_weather
@@ -69,13 +76,6 @@ flood_sensors:
   entities:
     - binary_sensor.utility_flood_sensor_sensor
 
-switches:
-  name: Smart Switches
-  entities:
-    - switch.garage_switch_switch
-    - switch.kitchen_switch_switch
-    - switch.hall_switch_switch
-
 living_room_door:
   name: Living Room Door
   entities:
@@ -98,7 +98,7 @@ living_room_sofa:
 hallway:
   name: Hallway
   entities:
-    - light.living_room_mood
+    - light.hallway_floor
 
 master_bedroom:
   name: Master Bedroom
@@ -112,13 +112,14 @@ master_bedroom:
 yorrick_bedroom:
   name: Yorrick's Bedroom
   entities:
-    - light.hue_white_lamp_3
+    - light.yorricks_bedroom
     - input_number.brightness_ybr
     - input_select.scene_ybr
 
 boudoir:
   name: Boudoir
   entities:
-    - light.hue_white_lamp_2
+    - light.boudoir_standard_lamp
+    - light.boudoir_2
     - input_number.brightness_bbr
     - input_select.scene_bbr
