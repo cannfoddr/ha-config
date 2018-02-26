@@ -256,3 +256,18 @@ remote.apple_tv:
 media_player.bravia_4k_2015:
   platform: plex
   unique_id: 87c060073459e47b-com-plexapp-android
+media_player.yorrickpc:
+  platform: plex
+  unique_id: xv9dpj4t0smzlrbb3buwstt9
+media_player.xperia_z4_tablet:
+  platform: plex
+  unique_id: 746928f44a3e1998-com-plexapp-android
+media_player.plex_web_chrome:
+  platform: plex
+  unique_id: vt51ddb8makbtf49s41rwn07
+media_player.ethans_iphone:
+  platform: plex
+  unique_id: CA17F719-FBB0-4FEA-9DC3-7B7043639B0E
+media_player.galaxy_tab_a_101:
+  platform: plex
+  unique_id: d6e1adde6ee8163b-com-plexapp-android

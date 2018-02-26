@@ -274,7 +274,7 @@
 - id: garage_notification
   alias: Garage Notification
   action:
-  - service: notify.po_adrian
+  - service: notify.po_parents
     data_template:
       data:
         title: 'HomeAssistant:'

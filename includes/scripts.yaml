@@ -119,22 +119,38 @@ yorrick_bedroom_lights_timeout:
           - light.hue_white_lamp_3
 
 input_select_harmony:
-    alias: "Start Harmony activity from input select"
-    sequence:
-      - service: remote.turn_on
-        data_template:
-          entity_id: remote.harmony_elite
-          activity: >
-            {% if is_state("input_select.living_room_tv", "PowerOff") %}
-                -1
-            {% elif is_state("input_select.living_room_tv", "Watch Netflix") %}
-                29636652
-            {% elif is_state("input_select.living_room_tv", "Plex") %}
-                29636653
-            {% elif is_state("input_select.living_room_tv", "Watch TV") %}
-                29636650
-            {% elif is_state("input_select.living_room_tv", "Play PS4") %}
-                29636649           
-            {% elif is_state("input_select.living_room_tv", "Watch DVD Blu-Ray") %}
-                29636648
-            {% endif %}
+  alias: "Start Harmony activity from input select"
+  sequence:
+    - service: remote.turn_on
+      data_template:
+        entity_id: remote.harmony_elite
+        activity: >
+          {% if is_state("input_select.living_room_tv", "PowerOff") %}
+              -1
+          {% elif is_state("input_select.living_room_tv", "Watch Netflix") %}
+              29636652
+          {% elif is_state("input_select.living_room_tv", "Plex") %}
+              29636653
+          {% elif is_state("input_select.living_room_tv", "Watch TV") %}
+              29636650
+          {% elif is_state("input_select.living_room_tv", "Play PS4") %}
+              29636649           
+          {% elif is_state("input_select.living_room_tv", "Watch DVD Blu-Ray") %}
+              29636648
+          {% endif %}
+
+owntracks_adrian_refresh:
+  alias: "Locate Adrian's iPhone"
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "owntracks/adrian/iphone6s"
+        payload_template: '{"_type":"cmd","action":"reportLocation"}'
+
+owntracks_waypoint_sync:
+  alias: "Sync Waypoints to all devices"
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "owntracks/adrian/oneplus5t"
+        payload_template: '{ "_type": "cmd", "action":"setwaypoints", "waypoints" { "waypoints" [ {"_type": "waypoint", "tst": 1475481980,  "lat": 51.519341675152,  "lon": -0.63022350257497,  "rad": 100, "desc": "Telefonica O2 Bath Road"} ] } }'

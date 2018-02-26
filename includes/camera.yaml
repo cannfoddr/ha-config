@@ -4,3 +4,9 @@
   password: KbEkE9Y6zjqfCsg8EoUbt7dybhEMPenPDKasb6WGJYWRbbjC4KMW2mBArf3iQFuZ
   verify_ssl: False
 - platform: arlo
+- platform: mjpeg
+  name: Driveway Camera
+  still_image_url: !secret driveway_camera_still
+  mjpeg_url: !secret driveway_camera_mjpeg
+  username: !secret camera_user
+  password: !secret camera_password

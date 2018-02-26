@@ -3,3 +3,13 @@
   longitude: -0.63022350257497
   radius: 100
   icon: mdi:worker
+- name: Desborough College
+  latitude: 51.5156725
+  longitude: -0.727387
+  radius: 200
+  icon: mdi:school
+- name: Furze Platt Senior School
+  latitude: 51.536256699999996
+  longitude: -0.7406583999999999
+  radius: 200
+  icon: mdi:school

@@ -79,10 +79,10 @@ flood_sensors:
 living_room_door:
   name: Living Room Door
   entities:
-    - light.living_room_ikea_1
-    - light.living_room_ikea_2
-    - light.living_room_ikea_3
-    - light.living_room_ikea_4
+    - light.color_temperature_light_1
+    - light.color_temperature_light_2
+    - light.color_temperature_light_3
+    - light.color_temperature_light_4
 
 living_room_sofa:
   name: Living Room Sofa

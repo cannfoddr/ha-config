@@ -8,6 +8,8 @@ cameras:
   view: yes
   entities:
     - group.arlo
+    - group.external
 Arlo:
-  - sensor.arlo_cameras
-  - sensor.battery_level_4g_camera
+  - camera.4g_camera
+External:
+  - camera.driveway_camera

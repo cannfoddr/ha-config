@@ -41,24 +41,28 @@ logbook:
 recorder:
   purge_interval: 2
   purge_keep_days: 30
-  db_url: !secret recorderdb_url
+#  db_url: !secret recorderdb_url
 
 # Emulated Hue Bridge
-emulated_hue:
-  host_ip: 192.168.1.190
-  listen_port: 8300
-  off_maps_to_on_domains:
-    - script
-    - scene
-  expose_by_default: true
-  exposed_domains:
-    - switch
+#emulated_hue:
+#  host_ip: 192.168.1.190
+#  listen_port: 8300
+#  off_maps_to_on_domains:
+#    - script
+#    - scene
+#  expose_by_default: true
+#  exposed_domains:
+#    - switch
+
+hue:
+    bridges:
+      - host: !secret hue_bridge_ip
+        allow_hue_groups: true 
+        allow_unreachable: true
+        allow_in_emulated_hue: false
 
 light:
   - platform: hue
-    host: 192.168.1.47
-    allow_hue_groups: true 
-    allow_in_emulated_hue: false
 
 # Z-Wave
 zwave:
