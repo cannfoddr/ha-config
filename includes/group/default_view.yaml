@@ -17,6 +17,7 @@ default_view:
     - group.motion_sensors
     - group.flood_sensors
     - group.family
+    - group.things
     - group.living_room_door
     - group.living_room_sofa
     - group.hallway
@@ -59,6 +60,9 @@ Family:
   - device_tracker.androidc75258685f21c5bf
   - device_tracker.fionamedsiphone
   - device_tracker.yorrick_phone
+
+Things:
+  - sensor.adrian
 
 Doors:
   - binary_sensor.front_door_detector_sensor

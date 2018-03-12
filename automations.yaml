@@ -362,21 +362,24 @@
     entity_id: binary_sensor.living_room_pir_livingroom
     to: 'on'
   condition:
-      condition: or
-      conditions:
-      - condition: sun
-        after: sunset
-      - condition: sun
-        before: sunrise
+    condition: or
+    conditions:
+    - condition: sun
+      after: sunset
+      after_offset: "-1:30:00"
+    - condition: sun
+      before: sunrise
   action:
     service: homeassistant.turn_on
-    entity_id: light.hallway_floor
+    data:
+      entity_id: light.hallway_floor
+      brightness: "180"
 
 - id: turn_off_hallway_light_after_delay
   alias: Turn off hallway light X minutes after last movement
   trigger:
     platform: state
-    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    entity_id: binary_sensor.living_room_pir_livingroom
     to: 'off'
     for:
       minutes: 5

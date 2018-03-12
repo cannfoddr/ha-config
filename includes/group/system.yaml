@@ -9,4 +9,4 @@ Master Controls:
     entities:
       - input_boolean.door_notifications
       - input_boolean.motion_notifications
-      - input_boolean.alarm_set
+      - alarm_control_panel.ha_alarm

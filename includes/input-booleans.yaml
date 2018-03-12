@@ -6,7 +6,3 @@ motion_notifications:
   name: "Motion Notifications"
   icon: mdi:run-fast
   initial: "off"
-alarm_set:
-  name: "Alarm Set"
-  icon: mdi:alarm-light
-  initial: "off"

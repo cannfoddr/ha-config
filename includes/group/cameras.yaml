@@ -9,7 +9,10 @@ cameras:
   entities:
     - group.arlo
     - group.external
+    - group.internal
 Arlo:
   - camera.4g_camera
 External:
   - camera.driveway_camera
+Internal:
+  - camera.study_camera

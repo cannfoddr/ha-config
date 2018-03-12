@@ -147,6 +147,7 @@ arlo:
 
 alarm_control_panel:
   - platform: arlo
+  - platform: manual
 
 ffmpeg:
 

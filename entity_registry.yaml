@@ -271,3 +271,24 @@ media_player.ethans_iphone:
 media_player.galaxy_tab_a_101:
   platform: plex
   unique_id: d6e1adde6ee8163b-com-plexapp-android
+media_player.kd55xd9305:
+  platform: cast
+  unique_id: 124c2d66-cf09-8883-dc96-3b50e6165fb2
+media_player.plex_web_safari:
+  platform: plex
+  unique_id: nr8w6al0ej9
+media_player.masst262833_macbook_air:
+  platform: plex
+  unique_id: mjg1d6ehg3tbj4i
+media_player.adrian_ws_ipad:
+  platform: plex
+  unique_id: 7C886A19-BD0A-4E69-8C7A-32842B828B5F
+media_player.fire_tv_stick:
+  platform: plex
+  unique_id: 6d2d4888cf571719-com-plexapp-android
+media_player.safari:
+  platform: plex
+  unique_id: d2evggvv51194ir8yhbmvzue
+media_player.adriansmacbookpro:
+  platform: plex
+  unique_id: 7692104a-5344-418c-8f5a-9f0007014ae3

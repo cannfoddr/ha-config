@@ -2,6 +2,7 @@ platform: darksky
 api_key: !secret darksky_api
 monitored_conditions:
   - humidity
+  - precip_type
   - precip_probability
   - precip_intensity
   - pressure
@@ -15,3 +16,6 @@ monitored_conditions:
   - wind_speed
   - hourly_summary
   - daily_summary
+  - minutely_summary
+  - visibility
+   

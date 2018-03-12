@@ -10,3 +10,9 @@
   mjpeg_url: !secret driveway_camera_mjpeg
   username: !secret camera_user
   password: !secret camera_password
+- platform: mjpeg
+  name: Study Camera
+  still_image_url: !secret study_camera_still
+  mjpeg_url: !secret study_camera_mjpeg
+  username: !secret camera_user
+  password: !secret camera_password
