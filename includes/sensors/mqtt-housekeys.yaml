@@ -1,0 +1,5 @@
+platform: mqtt_room
+device_id: '2f234454f4911ba9ffa6_000000000005'
+name: "Adrian's House Keys"
+state_topic: 'happy-bubbles/presence/ha'
+

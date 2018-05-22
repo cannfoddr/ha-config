@@ -59,7 +59,6 @@ hue:
       - host: !secret hue_bridge_ip
         allow_hue_groups: true 
         allow_unreachable: true
-        allow_in_emulated_hue: false
 
 light:
   - platform: hue
@@ -68,6 +67,7 @@ light:
 zwave:
   usb_path: /dev/ttyACM0
   network_key: !secret z_wave_network_key
+  debug: 'false'
 
 # Track the sun
 sun:
@@ -123,6 +123,9 @@ input_boolean: !include includes/input-booleans.yaml
 
 # Sensors
 sensor: !include_dir_list includes/sensors
+
+# REST API commands
+rest_command: !include includes/rest-commands.yaml
 
 tado:
   username: !secret tado_user

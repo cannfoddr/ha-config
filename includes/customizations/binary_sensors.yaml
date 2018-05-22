@@ -3,6 +3,16 @@ binary_sensor.garage_pir_garage:
   friendly_name: "Garage Motion"
   device_class: motion
 
+binary_sensor.hallway_pir_hallway:
+  icon: mdi:run-fast
+  friendly_name: "Front Door Motion"
+  device_class: motion
+
+binary_sensor.hallway_mid_pir_hallway:
+  icon: mdi:run-fast
+  friendly_name: "Hallway Mid Motion"
+  device_class: motion
+
 binary_sensor.living_room_pir_livingroom:
   icon: mdi:run-fast
   friendly_name: "Living Room Motion"

@@ -4,9 +4,11 @@ system_view:
     entities: 
       - group.all_automations
       - group.master_controls
+    icon: mdi:settings
 
 Master Controls:
     entities:
       - input_boolean.door_notifications
       - input_boolean.motion_notifications
+      - input_boolean.broadband_failover
       - alarm_control_panel.ha_alarm

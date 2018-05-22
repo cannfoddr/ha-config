@@ -25,6 +25,7 @@ default_view:
     - group.yorrick_bedroom
     - group.boudoir
     - group.switch
+  icon: mdi:home
 
 switch:
   name: Smart Switches
@@ -49,6 +50,10 @@ Heating:
   - sensor.heating_temperature
   - sensor.heating_humidity
   - sensor.heating_tado_mode
+  - sensor.hallway_pir_temperature
+  - sensor.hallway_mid_pir_temperature
+  - sensor.living_room_pir_temperature
+  - sensor.utility_flood_sensor_temperature
 
 Internet:
   - sensor.speedtest_ping
@@ -57,12 +62,13 @@ Internet:
 
 Family:
   - device_tracker.adrian_iphone6s
-  - device_tracker.androidc75258685f21c5bf
+#  - device_tracker.androidc75258685f21c5bf
   - device_tracker.fionamedsiphone
   - device_tracker.yorrick_phone
 
 Things:
-  - sensor.adrian
+  - sensor.adrians_house_keys
+  - sensor.adrians_car_keys
 
 Doors:
   - binary_sensor.front_door_detector_sensor
@@ -73,6 +79,8 @@ motion_sensors:
   name: Motion Sensors
   entities:
     - binary_sensor.living_room_pir_livingroom
+    - binary_sensor.hallway_pir_hallway
+    - binary_sensor.hallway_mid_pir_hallway
     - binary_sensor.garage_pir_garage
 
 flood_sensors:
@@ -107,9 +115,9 @@ hallway:
 master_bedroom:
   name: Master Bedroom
   entities:
-    - light.master_bedroom_main_light
+    - light.master_bedroom_light
     - light.veroniques_bedside_light
-    - light.adrians_bedside_light
+    - light.adrians__bedside_light
     - input_select.scene_mbr
     - switch.bedroom_switch
 

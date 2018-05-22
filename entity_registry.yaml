@@ -1,294 +1,500 @@
-media_player.oneplus_a5010:
-  platform: plex
-  unique_id: 260d9456ff6021f3-com-plexapp-android
-media_player.apple_tv:
-  platform: plex
-  unique_id: DF5EBDD9-CA29-4ED7-861E-F6BA331867DE
-sensor.adrians_iphone_6s_battery_state:
-  platform: ios
-  unique_id: state_adrians_iphone_6s
-sensor.adrians_iphone_6s_battery_level:
-  platform: ios
-  unique_id: level_adrians_iphone_6s
-sensor.heating_overlay:
-  platform: tado
-  unique_id: overlay 1
-sensor.veronique_and_adrians_home_tado_bridge_status:
-  platform: tado
-  unique_id: tado bridge status 61216
-sensor.heating_temperature:
-  platform: tado
-  unique_id: temperature 1
-sensor.heating_link:
-  platform: tado
-  unique_id: link 1
-sensor.heating_heating:
-  platform: tado
-  unique_id: heating 1
-sensor.heating_tado_mode:
-  platform: tado
-  unique_id: tado mode 1
-sensor.heating_power:
-  platform: tado
-  unique_id: power 1
-sensor.heating_humidity:
-  platform: tado
-  unique_id: humidity 1
-binary_sensor.living_room_pir_livingroom:
-  platform: zwave
-  unique_id: 5-72057594126794752
-sensor.living_room_pir_temperature:
-  platform: zwave
-  unique_id: 5-72057594126811154
-sensor.living_room_pir_luminance:
-  platform: zwave
-  unique_id: 5-72057594126811186
-sensor.living_room_pir_seismic_intensity:
-  platform: zwave
-  unique_id: 5-72057594126811538
-sensor.living_room_pir_alarm_type:
-  platform: zwave
-  unique_id: 5-72057594127859713
-sensor.living_room_pir_alarm_level:
-  platform: zwave
-  unique_id: 5-72057594127859729
-sensor.living_room_pir_sourcenodeid:
-  platform: zwave
-  unique_id: 5-72057594127859745
-sensor.living_room_pir_burglar:
-  platform: zwave
-  unique_id: 5-72057594127859873
-sensor.living_room_pir_general:
-  platform: zwave
-  unique_id: 5-72057594128564225
-binary_sensor.front_door_detector_sensor:
-  platform: zwave
-  unique_id: 6-72057594143571968
-sensor.front_door_detector_alarm_type:
-  platform: zwave
-  unique_id: 6-72057594144636929
-sensor.front_door_detector_alarm_level:
-  platform: zwave
-  unique_id: 6-72057594144636945
-sensor.front_door_detector_sourcenodeid:
-  platform: zwave
-  unique_id: 6-72057594144636961
-sensor.front_door_detector_access_control:
-  platform: zwave
-  unique_id: 6-72057594144637073
-binary_sensor.utility_flood_sensor_sensor:
-  platform: zwave
-  unique_id: 9-72057594193903616
-sensor.utility_flood_sensor_temperature:
-  platform: zwave
-  unique_id: 9-72057594193920018
-sensor.utility_flood_sensor_alarm_type:
-  platform: zwave
-  unique_id: 9-72057594194968577
-sensor.utility_flood_sensor_alarm_level:
-  platform: zwave
-  unique_id: 9-72057594194968593
-binary_sensor.utility_flood_sensor_general:
-  platform: zwave
-  unique_id: 9-72057594195673089
-binary_sensor.utility_flood_sensor_flood:
-  platform: zwave
-  unique_id: 9-72057594195673169
-binary_sensor.back_door_detector_sensor:
-  platform: zwave
-  unique_id: 10-72057594210680832
-sensor.back_door_detector_alarm_type:
-  platform: zwave
-  unique_id: 10-72057594211745793
-sensor.back_door_detector_alarm_level:
-  platform: zwave
-  unique_id: 10-72057594211745809
-sensor.back_door_detector_sourcenodeid:
-  platform: zwave
-  unique_id: 10-72057594211745825
-sensor.back_door_detector_access_control:
-  platform: zwave
-  unique_id: 10-72057594211745937
-binary_sensor.garage_pir_garage:
-  platform: zwave
-  unique_id: 11-72057594227458048
-sensor.garage_pir_luminance:
-  platform: zwave
-  unique_id: 11-72057594227474482
-sensor.garage_pir_alarm_type:
-  platform: zwave
-  unique_id: 11-72057594228523009
-sensor.garage_pir_alarm_level:
-  platform: zwave
-  unique_id: 11-72057594228523025
-sensor.garage_pir_sourcenodeid:
-  platform: zwave
-  unique_id: 11-72057594228523041
-sensor.garage_pir_burglar:
-  platform: zwave
-  unique_id: 11-72057594228523169
-binary_sensor.patio_door_detector_sensor:
-  platform: zwave
-  unique_id: 16-72057594311344128
-sensor.patio_door_detector_alarm_type:
-  platform: zwave
-  unique_id: 16-72057594312409089
-sensor.patio_door_detector_alarm_level:
-  platform: zwave
-  unique_id: 16-72057594312409105
-sensor.patio_door_detector_sourcenodeid:
-  platform: zwave
-  unique_id: 16-72057594312409121
-sensor.patio_door_detector_access_control:
-  platform: zwave
-  unique_id: 16-72057594312409233
-switch.living_room_smart_switch_switch:
-  platform: zwave
-  unique_id: 17-72057594327941120
-sensor.living_room_smart_switch_energy:
-  platform: zwave
-  unique_id: 17-72057594328154114
-sensor.living_room_smart_switch_power:
-  platform: zwave
-  unique_id: 17-72057594328154242
-sensor.living_room_smart_switch_voltage:
-  platform: zwave
-  unique_id: 17-72057594328154370
-sensor.living_room_smart_switch_current:
-  platform: zwave
-  unique_id: 17-72057594328154434
-sensor.living_room_smart_switch_power_factor:
-  platform: zwave
-  unique_id: 17-72057594328154498
-switch.kitchen_smart_switch_switch:
-  platform: zwave
-  unique_id: 18-72057594344718336
-sensor.kitchen_smart_switch_energy:
-  platform: zwave
-  unique_id: 18-72057594344931330
-sensor.kitchen_smart_switch_previous_reading:
-  platform: zwave
-  unique_id: 18-72057594344931346
-sensor.kitchen_smart_switch_power:
-  platform: zwave
-  unique_id: 18-72057594344931458
-sensor.kitchen_smart_switch_voltage:
-  platform: zwave
-  unique_id: 18-72057594344931586
-sensor.kitchen_smart_switch_current:
-  platform: zwave
-  unique_id: 18-72057594344931650
-switch.garage_smart_switch_switch:
-  platform: zwave
-  unique_id: 19-72057594361495552
-sensor.garage_smart_switch_energy:
-  platform: zwave
-  unique_id: 19-72057594361708546
-sensor.garage_smart_switch_previous_reading:
-  platform: zwave
-  unique_id: 19-72057594361708562
-sensor.garage_smart_switch_power:
-  platform: zwave
-  unique_id: 19-72057594361708674
-sensor.garage_smart_switch_voltage:
-  platform: zwave
-  unique_id: 19-72057594361708802
-sensor.garage_smart_switch_current:
-  platform: zwave
-  unique_id: 19-72057594361708866
-media_player.living_room:
-  platform: sonos
-  unique_id: RINCON_000E58119EF001400
-media_player.kitchen:
-  platform: sonos
-  unique_id: RINCON_000E58F1C3FE01400
-media_player.lg_g6:
-  platform: plex
-  unique_id: c75258685f21c5bf-com-plexapp-android
-media_player.h8216:
-  platform: plex
-  unique_id: f280d302dff823f8-com-plexapp-android
-media_player.adrians_iphone_6s:
-  platform: plex
-  unique_id: B224B1F2-E5ED-42DA-92A6-642042C10005
-light.color_temperature_light_3:
+light.color_temperature_light_1:
+  name:
   platform: hue
-  unique_id: 00:0b:57:ff:fe:12:90:b5-01
+  unique_id: 00:0b:57:ff:fe:15:1d:fc-01
 light.hue_color_spot_3:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:3c:80:ac-0b
-light.boudoir_standard_lamp:
+light.master_bedroom_light:
+  name:
   platform: hue
-  unique_id: 00:17:88:01:10:2f:5f:9f-0b
+  unique_id: 00:17:88:01:02:a8:03:33-0b
 light.hue_color_spot_5:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:42:25:fe-0b
 light.hue_color_spot_4:
+  name:
   platform: hue
   unique_id: 00:17:88:01:02:0b:0c:62-0b
-light.color_temperature_light_4:
+light.veroniques_bedside_light:
+  name:
   platform: hue
-  unique_id: 00:0b:57:ff:fe:12:cc:81-01
-light.color_temperature_light_1:
-  platform: hue
-  unique_id: 00:0b:57:ff:fe:24:e8:f0-01
-light.hue_white_lamp_3:
-  platform: hue
-  unique_id: 00:17:88:01:10:4f:20:63-0b
-light.hue_color_spot_6:
-  platform: hue
-  unique_id: 00:17:88:01:10:3c:82:2b-0b
-light.boudoir_2:
-  platform: hue
-  unique_id: 00:17:88:01:10:4f:20:0f-0b
-light.color_temperature_light_2:
-  platform: hue
-  unique_id: 00:0b:57:ff:fe:15:1d:fc-01
+  unique_id: 00:0b:57:ff:fe:26:a6:8a-01
 light.hallway_floor:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:36:e3:a8-0b
-media_player.apple_tv_2:
+light.hue_white_lamp_3:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:10:4f:20:63-0b
+light.boudoir:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:10:4f:20:0f-0b
+light.color_temperature_light_3:
+  name:
+  platform: hue
+  unique_id: 00:0b:57:ff:fe:12:cc:81-01
+light.boudoir_standard_lamp:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:10:2f:5f:9f-0b
+light.color_temperature_light_2:
+  name:
+  platform: hue
+  unique_id: 00:0b:57:ff:fe:12:90:b5-01
+light.adrians__bedside_light:
+  name:
+  platform: hue
+  unique_id: 00:0b:57:ff:fe:10:49:a8-01
+light.color_temperature_light_4:
+  name:
+  platform: hue
+  unique_id: 00:0b:57:ff:fe:24:e8:f0-01
+light.hue_color_spot_6:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:10:3c:82:2b-0b
+media_player.safari:
+  name:
+  platform: plex
+  unique_id: nr8w6al0ej9
+sensor.adrians_iphone_6s_battery_state:
+  name:
+  platform: ios
+  unique_id: state_adrians_iphone_6s
+sensor.adrians_iphone_6s_battery_level:
+  name:
+  platform: ios
+  unique_id: level_adrians_iphone_6s
+sensor.heating_tado_mode:
+  name:
+  platform: tado
+  unique_id: tado mode 1
+sensor.heating_temperature:
+  name:
+  platform: tado
+  unique_id: temperature 1
+sensor.heating_overlay:
+  name:
+  platform: tado
+  unique_id: overlay 1
+sensor.veronique_and_adrians_home_tado_bridge_status:
+  name:
+  platform: tado
+  unique_id: tado bridge status 61216
+sensor.heating_humidity:
+  name:
+  platform: tado
+  unique_id: humidity 1
+sensor.heating_link:
+  name:
+  platform: tado
+  unique_id: link 1
+sensor.heating_heating:
+  name:
+  platform: tado
+  unique_id: heating 1
+sensor.heating_power:
+  name:
+  platform: tado
+  unique_id: power 1
+zwave.aeotec_zw090_zstick_gen5_eu:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.living_room_pir:
+  name:
+  platform: zwave
+  unique_id: node-5
+binary_sensor.living_room_pir_livingroom:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126794752
+sensor.living_room_pir_temperature:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126811154
+sensor.living_room_pir_luminance:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126811186
+sensor.living_room_pir_seismic_intensity:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126811538
+sensor.living_room_pir_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859713
+zwave.front_door_detector:
+  name:
+  platform: zwave
+  unique_id: node-6
+sensor.living_room_pir_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859729
+sensor.living_room_pir_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859745
+sensor.living_room_pir_burglar:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859873
+sensor.living_room_pir_general:
+  name:
+  platform: zwave
+  unique_id: 5-72057594128564225
+binary_sensor.front_door_detector_sensor:
+  name:
+  platform: zwave
+  unique_id: 6-72057594143571968
+sensor.front_door_detector_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144636929
+sensor.front_door_detector_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144636945
+zwave.aeotec_dsd37_range_extender:
+  name:
+  platform: zwave
+  unique_id: node-8
+sensor.front_door_detector_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144636961
+sensor.front_door_detector_access_control:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144637073
+zwave.utility_flood_sensor:
+  name:
+  platform: zwave
+  unique_id: node-9
+zwave.back_door_detector:
+  name:
+  platform: zwave
+  unique_id: node-10
+binary_sensor.utility_flood_sensor_sensor:
+  name:
+  platform: zwave
+  unique_id: 9-72057594193903616
+sensor.utility_flood_sensor_temperature:
+  name:
+  platform: zwave
+  unique_id: 9-72057594193920018
+sensor.utility_flood_sensor_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968577
+sensor.utility_flood_sensor_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968593
+binary_sensor.utility_flood_sensor_general:
+  name:
+  platform: zwave
+  unique_id: 9-72057594195673089
+binary_sensor.utility_flood_sensor_flood:
+  name:
+  platform: zwave
+  unique_id: 9-72057594195673169
+zwave.garage_pir:
+  name:
+  platform: zwave
+  unique_id: node-11
+binary_sensor.back_door_detector_sensor:
+  name:
+  platform: zwave
+  unique_id: 10-72057594210680832
+sensor.back_door_detector_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745793
+sensor.back_door_detector_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745809
+sensor.back_door_detector_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745825
+sensor.back_door_detector_access_control:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745937
+zwave.aeotec_zw117_range_extender_6:
+  name:
+  platform: zwave
+  unique_id: node-14
+binary_sensor.garage_pir_garage:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227458048
+sensor.garage_pir_luminance:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227474482
+sensor.garage_pir_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523009
+sensor.garage_pir_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523025
+sensor.garage_pir_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523041
+sensor.garage_pir_burglar:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523169
+zwave.patio_door_detector:
+  name:
+  platform: zwave
+  unique_id: node-16
+binary_sensor.patio_door_detector_sensor:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311344128
+sensor.patio_door_detector_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 16-72057594312409089
+sensor.patio_door_detector_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 16-72057594312409105
+sensor.patio_door_detector_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 16-72057594312409121
+sensor.patio_door_detector_access_control:
+  name:
+  platform: zwave
+  unique_id: 16-72057594312409233
+zwave.living_room_smart_switch:
+  name:
+  platform: zwave
+  unique_id: node-17
+switch.living_room_smart_switch_switch:
+  name:
+  platform: zwave
+  unique_id: 17-72057594327941120
+zwave.kitchen_smart_switch:
+  name:
+  platform: zwave
+  unique_id: node-18
+sensor.living_room_smart_switch_energy:
+  name:
+  platform: zwave
+  unique_id: 17-72057594328154114
+sensor.living_room_smart_switch_power:
+  name:
+  platform: zwave
+  unique_id: 17-72057594328154242
+sensor.living_room_smart_switch_voltage:
+  name:
+  platform: zwave
+  unique_id: 17-72057594328154370
+sensor.living_room_smart_switch_current:
+  name:
+  platform: zwave
+  unique_id: 17-72057594328154434
+sensor.living_room_smart_switch_power_factor:
+  name:
+  platform: zwave
+  unique_id: 17-72057594328154498
+zwave.garage_smart_switch:
+  name:
+  platform: zwave
+  unique_id: node-19
+switch.kitchen_smart_switch_switch:
+  name:
+  platform: zwave
+  unique_id: 18-72057594344718336
+sensor.kitchen_smart_switch_energy:
+  name:
+  platform: zwave
+  unique_id: 18-72057594344931330
+sensor.kitchen_smart_switch_previous_reading:
+  name:
+  platform: zwave
+  unique_id: 18-72057594344931346
+sensor.kitchen_smart_switch_power:
+  name:
+  platform: zwave
+  unique_id: 18-72057594344931458
+sensor.kitchen_smart_switch_previous_reading_2:
+  name:
+  platform: zwave
+  unique_id: 18-72057594344931474
+sensor.kitchen_smart_switch_voltage:
+  name:
+  platform: zwave
+  unique_id: 18-72057594344931586
+sensor.kitchen_smart_switch_current:
+  name:
+  platform: zwave
+  unique_id: 18-72057594344931650
+zwave.hallway_pir:
+  name:
+  platform: zwave
+  unique_id: node-20
+switch.garage_smart_switch_switch:
+  name:
+  platform: zwave
+  unique_id: 19-72057594361495552
+sensor.garage_smart_switch_energy:
+  name:
+  platform: zwave
+  unique_id: 19-72057594361708546
+sensor.garage_smart_switch_previous_reading:
+  name:
+  platform: zwave
+  unique_id: 19-72057594361708562
+sensor.garage_smart_switch_power:
+  name:
+  platform: zwave
+  unique_id: 19-72057594361708674
+sensor.garage_smart_switch_voltage:
+  name:
+  platform: zwave
+  unique_id: 19-72057594361708802
+sensor.garage_smart_switch_current:
+  name:
+  platform: zwave
+  unique_id: 19-72057594361708866
+zwave.hallway_mid_pir:
+  name:
+  platform: zwave
+  unique_id: node-22
+binary_sensor.hallway_pir_hallway:
+  name:
+  platform: zwave
+  unique_id: 20-72057594378452992
+sensor.hallway_pir_temperature:
+  name:
+  platform: zwave
+  unique_id: 20-72057594378469394
+sensor.hallway_pir_luminance:
+  name:
+  platform: zwave
+  unique_id: 20-72057594378469426
+sensor.hallway_pir_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 20-72057594379517953
+sensor.hallway_pir_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 20-72057594379517969
+sensor.hallway_pir_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 20-72057594379517985
+sensor.hallway_pir_burglar:
+  name:
+  platform: zwave
+  unique_id: 20-72057594379518113
+binary_sensor.hallway_mid_pir_hallway:
+  name:
+  platform: zwave
+  unique_id: 22-72057594412007424
+sensor.hallway_mid_pir_temperature:
+  name:
+  platform: zwave
+  unique_id: 22-72057594412023826
+sensor.hallway_mid_pir_luminance:
+  name:
+  platform: zwave
+  unique_id: 22-72057594412023858
+sensor.hallway_mid_pir_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 22-72057594413072385
+sensor.hallway_mid_pir_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 22-72057594413072401
+sensor.hallway_mid_pir_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 22-72057594413072417
+sensor.hallway_mid_pir_burglar:
+  name:
+  platform: zwave
+  unique_id: 22-72057594413072545
+media_player.apple_tv:
+  name:
   platform: apple_tv
   unique_id: bdced7c58f8365fbafd7cc4d47d23dff99d4b393e070801c2e125336755e1b78
 remote.apple_tv:
+  name:
   platform: apple_tv
   unique_id: bdced7c58f8365fbafd7cc4d47d23dff99d4b393e070801c2e125336755e1b78
-media_player.bravia_4k_2015:
-  platform: plex
-  unique_id: 87c060073459e47b-com-plexapp-android
-media_player.yorrickpc:
-  platform: plex
-  unique_id: xv9dpj4t0smzlrbb3buwstt9
-media_player.xperia_z4_tablet:
-  platform: plex
-  unique_id: 746928f44a3e1998-com-plexapp-android
-media_player.plex_web_chrome:
-  platform: plex
-  unique_id: vt51ddb8makbtf49s41rwn07
-media_player.ethans_iphone:
-  platform: plex
-  unique_id: CA17F719-FBB0-4FEA-9DC3-7B7043639B0E
-media_player.galaxy_tab_a_101:
-  platform: plex
-  unique_id: d6e1adde6ee8163b-com-plexapp-android
+media_player.kitchen:
+  name:
+  platform: sonos
+  unique_id: RINCON_000E58F1C3FE01400
+media_player.living_room:
+  name:
+  platform: sonos
+  unique_id: RINCON_000E58119EF001400
 media_player.kd55xd9305:
+  name:
   platform: cast
   unique_id: 124c2d66-cf09-8883-dc96-3b50e6165fb2
-media_player.plex_web_safari:
+media_player.bravia_4k_2015:
+  name:
   platform: plex
-  unique_id: nr8w6al0ej9
-media_player.masst262833_macbook_air:
+  unique_id: 87c060073459e47b-com-plexapp-android
+media_player.oneplus_a5010:
+  name:
   platform: plex
-  unique_id: mjg1d6ehg3tbj4i
+  unique_id: 260d9456ff6021f3-com-plexapp-android
+media_player.lg_g6:
+  name:
+  platform: plex
+  unique_id: c75258685f21c5bf-com-plexapp-android
+media_player.adrians_iphone_6s:
+  name:
+  platform: plex
+  unique_id: B224B1F2-E5ED-42DA-92A6-642042C10005
+media_player.yorrickpc:
+  name:
+  platform: plex
+  unique_id: xv9dpj4t0smzlrbb3buwstt9
+media_player.p20_pro:
+  name:
+  platform: plex
+  unique_id: ad4e5344ebafd82b-com-plexapp-android
+media_player.chrome:
+  name:
+  platform: plex
+  unique_id: wg4sc7zaymmnuwyzprpsbho7
 media_player.adrian_ws_ipad:
+  name:
   platform: plex
   unique_id: 7C886A19-BD0A-4E69-8C7A-32842B828B5F
-media_player.fire_tv_stick:
+media_player.chrome_2:
+  name:
   platform: plex
-  unique_id: 6d2d4888cf571719-com-plexapp-android
-media_player.safari:
+  unique_id: vt51ddb8makbtf49s41rwn07
+media_player.safari_2:
+  name:
   platform: plex
-  unique_id: d2evggvv51194ir8yhbmvzue
-media_player.adriansmacbookpro:
+  unique_id: mn7uyqdsg1hefagrzpnrsw8i
+media_player.chrome_3:
+  name:
   platform: plex
-  unique_id: 7692104a-5344-418c-8f5a-9f0007014ae3
+  unique_id: xqnvl5y7mgajbiuv78du9ejn

@@ -1,0 +1,6 @@
+sabnzbd_pause:
+  url: !secret sabnzbd_pause_cmd
+  method: 'get'
+sabnzbd_resume:
+  url: !secret sabnzbd_resume_cmd
+  method: 'get'

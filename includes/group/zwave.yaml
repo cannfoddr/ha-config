@@ -13,6 +13,7 @@ zwave:
     - group.flood
     - group.switches
     - group.extenders
+  icon: mdi:gauge
 
 Controller:
   entities:
@@ -28,6 +29,8 @@ PIR:
   entities:
     - zwave.garage_pir
     - zwave.living_room_pir
+    - zwave.hallway_pir
+    - zwave.hallway_mid_pir
 
 Flood:
   entities:

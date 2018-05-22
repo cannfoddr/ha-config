@@ -10,6 +10,7 @@ cameras:
     - group.arlo
     - group.external
     - group.internal
+  icon: mdi:webcam
 Arlo:
   - camera.4g_camera
 External:

@@ -6,3 +6,7 @@ motion_notifications:
   name: "Motion Notifications"
   icon: mdi:run-fast
   initial: "off"
+broadband_failover:
+  name: "Broadband Failover"
+  icon: mdi:router-wireless
+  initial: "off"

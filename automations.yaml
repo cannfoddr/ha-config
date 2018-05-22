@@ -214,6 +214,7 @@
 
 - id: xmas_lights_off_after_10pm
   alias: Xmas Lights off after 10pm
+  initial_state: 'off'
   trigger:
   - at: '22:00:00'
     platform: time
@@ -226,6 +227,7 @@
       title: 'HomeAssistant:'
 - id: xmas_lights_on_around_sunset
   alias: Xmas Lights on at sunset
+  initial_state: 'off'
   trigger:
   - event: sunset
     offset: 00:00:00
@@ -267,7 +269,7 @@
     entity_id: input_boolean.motion_notifications
     state: 'on'
   trigger:
-  - entity_id: binary_sensor.living_room_pir_livingroom
+  - entity_id: binary_sensor.living_room_pir_livingroom, binary_sensor.hallway_pir_hallway
     platform: state
     to: 'on'
 
@@ -310,6 +312,7 @@
 
 - id: ActionsWhenEveryoneLeaves
   alias: Actions When Everyone Leaves
+  initial_state: 'off'
   trigger:
     platform: state
     entity_id: group.family
@@ -359,7 +362,7 @@
   alias: Turn on Hallway light when there is movement
   trigger:
     platform: state
-    entity_id: binary_sensor.living_room_pir_livingroom
+    entity_id: binary_sensor.living_room_pir_livingroom, binary_sensor.hallway_pir_hallway, binary_sensor.hallway_mid_pir_hallway
     to: 'on'
   condition:
     condition: or
@@ -379,7 +382,7 @@
   alias: Turn off hallway light X minutes after last movement
   trigger:
     platform: state
-    entity_id: binary_sensor.living_room_pir_livingroom
+    entity_id: binary_sensor.living_room_pir_livingroom, binary_sensor.hallway_pir_hallway, binary_sensor.hallway_mid_pir_hallway
     to: 'off'
     for:
       minutes: 5
@@ -398,4 +401,30 @@
       entity_id: input_select.living_room_tv
       option: >
         {{ states.remote.living_room_tv.attributes.current_activity }}
+
+- id: broadband_failure_notification
+  alias: 'Broadband has failed'
+  trigger:
+    platform: state
+    entity_id: input_boolean.broadband_failover
+    to: 'on'
+  action:
+  - service: notify.po_adrian
+    data:
+      message: Broadband has failed over to 4G
+      title: 'HomeAssistant:'
+  - service: rest_command.sabnzbd_pause
+
+- id: broadband_recovery_notification
+  alias: 'Broadband has recovered'
+  trigger:
+    platform: state
+    entity_id: input_boolean.broadband_failover
+    to: 'off'
+  action:
+  - service: notify.po_adrian
+    data:
+      message: Broadband has switched back to Virgin Cable
+      title: 'HomeAssistant:'
+  - service: rest_command.sabnzbd_resume
 
